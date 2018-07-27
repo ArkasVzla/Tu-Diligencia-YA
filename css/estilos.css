@@ -1,14 +1,4 @@
-html {
-	position: relative; min-height: 100%;}
- 
-body {
-	margin: 0 auto 150px; /* El inferior es igual al alto del footer */
-}
- 
-footer {
-	height: 150px;
-	position: absolute; left: 0; bottom: 0; width: 100%;
-}
+
 
 	/* Por debajo de 700px */ 
 @media screen and (max-width: 600px) {
