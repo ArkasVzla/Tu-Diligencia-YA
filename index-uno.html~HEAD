@@ -126,7 +126,6 @@
             </div>
         </div>
     </div>
-    <!-- Seccion Por que elegirnos -->
     <div class="jumbotron jumbotron-fluid bg-success">
         <div class="container">
             <div class="row">
@@ -136,10 +135,11 @@
                 <div class="col-sm-12 col-md-6 col-lg-6 text-center">
                     <i class = " display-1 text-white material-icons ">done_outline</i> 
                 </div>
-            </div>    
+            </div>
+             
         </div>
     </div>
-    
+    <!-- Seccion Por que elegirnos -->
     <div class="container">   
         <div class="row mb-3">
             <div class="col-sm-12 col-md-7 col-lg-7">
@@ -379,7 +379,7 @@
     </footer>
     <script>
         $('carousel').carousel({
-            interval: 30001
+            interval: 30000
         })
     </script>
     <script src="js/jquery-3.3.1.min.js"></script>
