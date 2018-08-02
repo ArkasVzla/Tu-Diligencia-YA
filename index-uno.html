@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <!-- menu de navegaciones -->
+    <!-- menu de navegacion -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
         <div class="container">
             <img src="img/logo.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto;" width="200" >
@@ -47,7 +47,8 @@
             
                 <form class="form-inline">
 	    			<a class ="btn btn-outline-secondary mr-2" href="#">Registrate</a>
-			      	<a class ="btn btn-outline-secondary" href="#">Ingresar</a>
+                      <a class ="btn btn-outline-secondary"
+                       href="#">Ingresar</a>
 	  		    </form>	
             </div>
         </div>    
@@ -96,8 +97,11 @@
     <!-- Seccion Sobre nosotros. la empresa, vision, mision -->
     <div class="container mt-5">
         <div class="row mb-5">
-            <div class="col-sm-12 col-md-6 col-lg-6">
-                <h2 class="text-secondary mb-5">Sobre nosotros</h2>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+                <h2 class="text-secondary text-left mb-1">Sobre nosotros</h2>
+                <figure class="figure">
+                    <img src="img/nosotros.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto; mt-5" width="200">
+                </figure>
                 <p class="text-justify">Un equipo de confianza que brindamos el mejor apoyo de servicio de asistencias y asesorías para gestiones diversas, tales como revisión, traducción, apostillado de todo tipo de documentos, gestiones gubernamentales, tramites civiles, trámites bancarios y pago de deudas de servicios públicos y entre otros.</p>
                 <figure class="figure">
                     <img src="img/conoce-servicios.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto; mt-5">
@@ -108,7 +112,7 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-12 text-center mb-2">
                         <figure class="figure">
-                            <img src="img/empresa.png" alt="responsive image" width="100" class="img-fluid">
+                            <img src="img/empresa.png" alt="responsive image" width="200" class="img-fluid">
                         </figure>
                         <h2 class="text-center text-primary">La Empresa</h2>
                         <p class="text-justify">La organización busca destacarse en los aspectos de eficacia en la resolución y la garantía de entrega de los documentos, así como la seguridad de los datos y ya que de esa forma se consigue satisfacer completamente al público; a lo que se considera, que cuando se presenten fallas en alguno de estos conceptos se deben implementar estrategias secundarias para mejorar esta situación lo más rápido posible, porque la empresa puede perder clientes en poco tiempo.</p>
@@ -176,13 +180,13 @@
     </div>
 
     <div class="container">
-        <div class="row mt-5">
-            <div class="col-sm-12 col-md-4 col-lg-4 text-center">
-                <figure class="figure">
-                    <img src="img/servicios.jpg" class="img-fluid width: 100%; height: auto;" alt="responsive image">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <figure class="figure mt-5">
+                    <img src="img/servicios.png" class="img-fluid width: 100%; height: auto;" alt="responsive image">
                 </figure>
             </div>
-            <div class="col-sm-12 col-md-8 col-lg-8 mt-5">
+            <div class="col-sm-12 col-md-8 col-lg-8 mt-3">
                 <div class="card-deck mb-4">
                     <div class="card">  
                         <div class="card-body">
@@ -246,45 +250,10 @@
         </div>
     </div>
     <div id="Contacto" class="container mt-5">
-		<div class="row text-center">
-			<div class="col-sm-12 col-md-12 col-lg-6 text-center">
+		<div class="row ">
+			<div class="col-sm-12 col-md-12 col-lg-8">
 				<div class="col-sm-12 col-md-12 col-lg-12">
-					<div class="card-group">
-					  <div class="card border-light">
-					    <img class="card-img-top" src="img/avatarmujer.png" alt="Card image cap">
-					    <div class="card-body">
-					      <h5 class="card-title">Beberly Sanchez</h5>
-					    </div>
-					    <div class="card-footer">
-									<p class="text-muted"><i class="material-icons">smartphone</i> +584240000000</p>
-					    </div>
-					  </div>
-
-					  <div class="card border-light">
-					    <img class="card-img-top" src="img/avatarhombre.png" alt="Card image cap">
-					    <div class="card-body">
-								<h5 class="card-title">Jose D. Ramos</h5>
-					    </div>
-					    <div class="card-footer">
-									<p class="text-muted"><i class="material-icons">smartphone</i> +584240000000</p>
-					    </div>
-					  </div>
-
-					  <div class="card border-light">
-					    <img class="card-img-top" src="img/avatarmujer.png" alt="Card image cap">
-					    <div class="card-body">
-					      <h5 class="card-title">Maria Eugenia</h5>
-					    </div>
-					    <div class="card-footer">
-							<p class="text-muted"><i class="material-icons">smartphone</i> +584240000000</p>
-					    </div>
-					  </div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-sm-12 col-md-12 col-lg-6 text-left">
-				<form action="#">
+					<form action="#">
 					<div class="form-group">
 						<label class="text-secondary col-form-label-md" for="nombre">Nombre:</label>
 						<input type="text" class="form-control form-control-lg border-secondary" id="nombre" aria-describedby="emailHelp" placeholder="Ingresar Nombre">
@@ -296,17 +265,19 @@
 					</div>
 
 					<div class="form-group">
-						<label class="text-secondary col-form-label-md" for="asunto">Asunto:</label>
-						<input type="text" class="form-control form-control-lg border-secondary" id="asunto" aria-describedby="emailHelp" placeholder="Ingresar Asunto">
-					</div>
-
-					<div class="form-group">
 						<label class="text-secondary col-form-label-md border-dark" for="contenido">Mensaje</label>
 						<textarea class="form-control border-secondary" id="mensaje" rows="3" placeholder="Escribir mensaje"></textarea>
 					</div>
 
-					<button type="submit" class="btn btn-block btn-outline-secondary mb-5">Enviar</button>
+					<button type="submit" class="btn btn-block btn-outline-secondary mb-5">Enviar Mensaje</button>
 				</form>
+				</div>
+			</div>
+
+			<div class="col-sm-12 col-md-12 col-lg-4">
+				<figure class="figure d-flex justify-content-center">
+                    <img src="img/contactenos.jpg" class="img-fluid width: 100%; height: auto;" alt="responsive image">
+                </figure>
 			</div>
 		</div>
     </div>
