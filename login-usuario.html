@@ -10,7 +10,85 @@
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    
+    <div class="container-fluid">
+        <div class="row">
+            <div class=" barra-lateral col-12 col-sm-auto">
+                <div class="logo">
+                    <h2>DashBoard</h2>
+                </div>
+                <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
+                    <a href="#"><i class="material-icons">home</i><span>Inicio</span></a>
+                    <a href="#"><i class="material-icons">open_in_new</i><span>Entradas</span></a>
+                    <a href="#"><i class="material-icons">supervisor_account</i><span>Usuarios</span></a>
+                    <a href="#"><i class="material-icons">settings</i><span>Configuraciones</span></a>
+                    <a href="#"><i class="material-icons">exit_to_app</i><span>Salir</span></a>
+                </nav>
+            </div>
+            <main class="main col">
+                <div class="row">
+                    <div class="columna col-lg-7">
+                        <div class="widget nueva-entrada">
+                            <h3 class="titulo">Nueva Entrada</h3>
+                            <form action="#">
+                                <input type="text" placeholder="Titulo de la entrada">
+                                <textarea name="" id="" cols="30" rows="10" placeholder="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, odio, excepturi repellendus alias architecto tenetur saepe nihil officiis voluptas, corporis suscipit fugiat voluptate sequi reiciendis nisi qui nulla nesciunt quia!"></textarea>
+                                <div class="d-flex justify-content-center">
+                                    <button><i class="material-icons">exit_to_app</i>Enviar</button>
+                                </div>  
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="columna col-lg-5">
+                        <div class="widget estadisticas">
+                            <h3 class="titulo">Estadisticas</h3>
+                            <div class="contenedor d-flex flex-wrap">
+                                <div class="caja">
+                                    <h3>15.154</h3>
+                                    <p>Visitas</p>
+                                </div>
+                                <div class="caja">
+                                    <h3>1.854</h3>
+                                    <p>Registros</p>
+                                </div>
+                                <div class="caja">
+                                    <h3>15.154</h3>
+                                    <p>Ingresos</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="widget comentarios">
+                            <h3 class="titulo">Comentarios</h3>
+                            <div class="contenedor">
+                                <div class="comentario d-flex flex-wrap">
+                                    <div class="foto">
+                                        <a href="#">
+                                            <img src="img/logo.png" width="100" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="texto">
+                                        <a href="#"> David</a>
+                                        <p>en <a href="#">Mi Primer entrada</a></p>
+                                        <p class="texto-comentario">
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae labore architecto eaque, totam asperiores</p>
+                                    </div>
+                                    <div class="botones d-flex justify-content-start flex-wrap w-100">
+                                        <button class="aprobar">Aprobar</button>
+                                        <button class="eliminar">Eliminar</button>
+                                        <button class="bloquear">Bloquear usuario</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </main>
+        </div>
+    </div>
+
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>
