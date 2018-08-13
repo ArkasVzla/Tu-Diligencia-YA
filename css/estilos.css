@@ -107,6 +107,7 @@ body {
 .main .widget form textarea {
 	height: 400px;
 	min-height: 200px;
+	max-height: 400px;
 	max-width: 100%;
 	min-width: 100%;
 }
@@ -199,7 +200,6 @@ body {
 }
 
 .main .comentarios .comentario .botones button {
-	/* background: none; */
 	cursor: pointer;
 	color: #fff;
 	font-family: 'Roboto', sans-serif;
