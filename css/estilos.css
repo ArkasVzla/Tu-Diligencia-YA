@@ -90,7 +90,7 @@ body {
 }
 
 /* --- ---- WIDGET NUEVA ENTRADA --- ----  */
-.main .widget form input[type="text"],
+/* .main .widget form input[type="text"],
 .main .widget form textarea {
 	width: 100%;
 	padding: 10px;
@@ -102,7 +102,7 @@ body {
 
 .main .widget form input[type="text"] {
 	font-weight: 400;
-}
+} */
 
 .main .widget form textarea {
 	height: 400px;
@@ -112,7 +112,7 @@ body {
 	min-width: 100%;
 }
 
-.main .widget form button {
+/* .main .widget form button {
 	background: #0275d8;
 	cursor: pointer;
 	color: #fff;
@@ -129,7 +129,7 @@ body {
 
 .main .widget form button:hover {
 	background: #025aa5;
-}
+} */
 
 /* --- ---- WIDGET ESTADISTICAS --- ----  */
 .main .estadisticas .contenedor {
