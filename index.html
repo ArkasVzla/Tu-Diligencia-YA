@@ -135,7 +135,7 @@
                     <h1 class="text-white mt-4"> Por qué elegirnos</h1> 
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-6 text-center">
-                    <i class = " display-1 text-white material-icons ">done_outline</i> 
+                    <i class = "display-1 text-white material-icons">done_outline</i> 
                 </div>
             </div>    
         </div>
