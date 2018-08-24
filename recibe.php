@@ -20,5 +20,4 @@ $passdos = $_POST['passdos'];
 
 echo 'Hola ' . $nombre . ' eres ' . $sexo;
 
-
 ?>
