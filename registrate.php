@@ -52,9 +52,53 @@
         // $usuario = trim($usuario);
         // $usuario = htmlspecialchars($usuario);
         // $usuario = stripcslashes($usuario);
-        echo "tu usuario es: $correo <br>";
+        echo "tu usuario es: $usuario <br>";
     } else {
         $errores .='Por favor ingresar el usuario <br />';
+    }
+
+    if(!empty($cedula)){
+        $cedula = filter_var($cedula, FILTER_SANITIZE_STRING);
+        // $cedula = trim($cedula);
+        // $usuario = htmlspecialchars($cedula);
+        // $usuario = stripslashes($cedula);
+        echo "tu cedula es: $cedula <br />";
+    }else {
+        $errores .='Por favor ingresar la cedula <br />';
+    }
+
+    if(!empty($pais)){
+        $pais = filter_var($pais, FILTER_SANITIZE_STRING);
+        // $pais = trim($pais);
+        // $pais = htmlspecialchars($pais);
+        // $pais = stripcslashes($pais);
+        echo "Tu pais es: $pais";
+    } else{
+        $errores .= 'Por favor ingresa el pais <br />';
+    }
+
+    if(!empty($direccion)){
+        $direccion = filter_var($direccion, FILTER_SANITIZE_STRING);
+        // $direccion = trim($direccion);
+        // $direccion = htmlspecialchars($direccion);
+        // $direccion = stripslashes($direccion);
+    }else{
+        $errores .= 'Por favor ingresar la direccion <br />';
+    }
+
+    if(!empty($telefono)){
+        $telefono = filter_var($telefono, FILTER_SANITIZE_STRING);
+        // $telefono = trim($telefono);
+        // $telefono = htmlspecialchars($telefono);
+        // $telefono = stripcslashes($telefono);
+    }else{
+        $errores .= 'Por favor ingresar un Nº Telefono <br />';
+    }
+
+    if(isset($sexo)){
+        $sexo = $_POST['sexo'];
+    }else{
+        $errores .= 'Por favor ingresar un genero <br />';
     }
     
 } 
@@ -83,7 +127,7 @@
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#">La Empresa</a>
@@ -108,8 +152,8 @@
             </ul>
             
                 <form class="form-inline">
-	    			<a class="btn btn-outline-secondary mr-2" href="registrate.html">Registrate</a>
-                      <a class="btn btn-outline-secondary" href="login.html">Ingresar</a>
+	    			<a class="btn btn-outline-secondary mr-2" href="registrate.php">Registrate</a>
+                      <a class="btn btn-outline-secondary" href="login.php">Ingresar</a>
 	  		    </form>	
             </div>
         </div>    
@@ -192,7 +236,7 @@
                                         </div>
                                                             <!-- Seleccion de paises-->
                                         <div class="col-sm-12 col-md-6 col-lg-6">
-                                            <select value="pais" name="pais" class="custom-select custom-select-lg mb-3">
+                                            <select name="pais" class="custom-select custom-select-lg mb-3">
                                                 <option selected>Pais donde se encuentra</option>
                                                 <option value="AF">Afganistán</option>
                                                 <option value="AL">Albania</option>
