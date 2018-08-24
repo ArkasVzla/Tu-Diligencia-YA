@@ -52,7 +52,6 @@
         // $usuario = trim($usuario);
         // $usuario = htmlspecialchars($usuario);
         // $usuario = stripcslashes($usuario);
-<<<<<<< HEAD:registrate.php
         echo "tu usuario es: $usuario <br>";
     } else {
         $errores .='Por favor ingresar el usuario <br />';
@@ -101,12 +100,6 @@
     }else{
         $errores .= 'Por favor ingresar un genero <br />';
     }
-=======
-        echo "tu usuario es: $correo <br>";
-    } else {
-        $errores .='Por favor ingresar el usuario <br />';
-    }
->>>>>>> c301c25f479678ea6c48fe30c89c6aca2a1cbb7b:registrate.php
     
 } 
     
