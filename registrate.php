@@ -1,3 +1,66 @@
+<?php 
+    if(isset($_POST['registrar'])) {
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $correo = $_POST['correo'];
+    $usuario = $_POST['usuario'];
+    $cedula = $_POST['cedula'];
+    $pais = $_POST['pais'];
+    $direccion = $_POST['direccion'];
+    $telefono = $_POST['telefono'];
+    $sexo = $_POST['sexo'];
+    $passuno = $_POST['passuno'];
+    $passdos = $_POST['passdos'];
+
+    $errores = '';
+    
+    if(!empty($nombre)){
+        $nombre = filter_var($nombre, FILTER_SANITIZE_STRING);
+        // $nombre = trim($nombre);
+        // $nombre = htmlspecialchars($nombre);
+        // $nombre = stripcslashes($nombre);
+        echo "tu nombre es: $nombre <br>";
+    } else {
+        $errores .='Por favor ingresar el Nombre <br /> ';
+    }
+
+    if(!empty($apellido)){
+        $apellido = filter_var($apellido, FILTER_SANITIZE_STRING);
+        // $apellido = trim($apellido);
+        // $apellido = htmlspecialchars($apellido);
+        // $apellido = stripcslashes($apellido);
+        echo "tu apellido es: $apellido <br>";
+    } else {
+        $errores .='Por favor ingresar el Apellido <br />';
+    }
+
+    if(!empty($correo)){
+        $correo = filter_var($correo, FILTER_SANITIZE_EMAIL);
+        // $correo = trim($correo);
+        // $correo = htmlspecialchars($correo);
+        // $correo = stripcslashes($correo);
+        echo "tu correo es: $correo <br>";
+        if(filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+            $errores .= 'Por favor ingresa un correo valido <br />';
+        }
+    } else {
+        $errores .='Por favor ingresar el Correo <br />';
+    }
+ 
+    if(!empty($usuario)){
+        $usuario = filter_var($usuario, FILTER_SANITIZE_STRING);
+        // $usuario = trim($usuario);
+        // $usuario = htmlspecialchars($usuario);
+        // $usuario = stripcslashes($usuario);
+        echo "tu usuario es: $correo <br>";
+    } else {
+        $errores .='Por favor ingresar el usuario <br />';
+    }
+    
+} 
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +74,7 @@
 </head>
 <body>
     			<!-- Menu de Navegacion -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
             <img src="img/logo.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto;" width="200" >
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,10 +114,14 @@
             </div>
         </div>    
     </nav>
-
-
+<!-- Errores de Validacion -->
+        <div class="w-100"></div>
+        <?php if(!empty($errores)): ?>
+        <div><?php echo $errores; ?></div>
+        <?php endif; ?>
         
 	<div class="container-fluid">
+        
         <div class="row">
             <div class="col-12 d-flex justify-content-center mt-5">
                 <figure class="figure">
@@ -70,7 +137,8 @@
                 <div class="card" style="width: 750px;">
                     <div class="card-body">
                         <div class="card-title text-muted text-center"><h4>Crear cuenta</h4></div>
-                            <form action="#">
+                        
+                            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="" id="">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
@@ -79,7 +147,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">face</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" id="nombre" placeholder="Ingresar Nombre">
+                                                <input type="text" class="form-control form-control-lg" name="nombre" id="nombre" placeholder="Ingresar Nombre">
                                             </div>
                                         </div>
 
@@ -89,7 +157,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">face</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" id="apellido" placeholder="Ingresar Apellido">
+                                                <input type="text" class="form-control form-control-lg" name="apellido" id="apellido" placeholder="Ingresar Apellido">
                                             </div>
                                         </div>
 
@@ -99,7 +167,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">email</i></div>
                                                 </div>
-                                                <input type="email" class="form-control form-control-lg" id="email" placeholder="Ingresar Correo">
+                                                <input type="email" class="form-control form-control-lg" name="correo" id="email" placeholder="Ingresar Correo">
                                             </div>
                                         </div>
 
@@ -109,7 +177,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">account_circle</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" id="usuario" placeholder="Nombre de Usuario">
+                                                <input type="text" class="form-control form-control-lg" name="usuario" id="usuario" placeholder="Nombre de Usuario">
                                             </div>
                                         </div>
 
@@ -119,12 +187,12 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text lead">V-</div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" id="cedula" placeholder="Cedula">
+                                                <input type="text" class="form-control form-control-lg" name="cedula" id="cedula" placeholder="Cedula">
                                             </div>
                                         </div>
                                                             <!-- Seleccion de paises-->
                                         <div class="col-sm-12 col-md-6 col-lg-6">
-                                            <select class="custom-select custom-select-lg mb-3">
+                                            <select value="pais" name="pais" class="custom-select custom-select-lg mb-3">
                                                 <option selected>Pais donde se encuentra</option>
                                                 <option value="AF">Afganistán</option>
                                                 <option value="AL">Albania</option>
@@ -364,14 +432,14 @@
 
                                             </select>
                                         </div>
-                                                        <!-- Direccion de los usuarios-->
+                                                        <!-- Direccion del Usuario-->
                                         <div class="col-sm-12 col-md-12 col-lg-12 mb-3">
                                             <label class="sr-only" for="direccion">Direccion</label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">location_on</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" id="direccion" placeholder="Direccion">
+                                                <input type="text" class="form-control form-control-lg" name="direccion" id="direccion" placeholder="Direccion">
                                             </div>
                                         </div>
                                                             <!-- Telefono de usuarios-->
@@ -381,19 +449,19 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">phone</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" id="telefono" placeholder="Telefono">
+                                                <input type="text" class="form-control form-control-lg" name="telefono" id="telefono" placeholder="Telefono">
                                             </div>
                                         </div>
                                         <!-- Seccion de generos-->
                                         <div class="col-sm-12 col-md-6 col-lg-6 mb-2">
                                             <h5 class="text-muted">Genero</h5>
                                             <div class="custom-control custom-radio custom-control-inline mt-0">
-                                                <input type="radio" id="hombre" name="customRadio" class="custom-control-input">
+                                                <input type="radio" name="sexo" value="hombre" id="hombre" class="custom-control-input">
                                                 <label class="custom-control-label" for="hombre">Hombre</label>
                                             </div>
 
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" id="mujer" name="customRadio" class="custom-control-input">
+                                                <input type="radio" name="sexo" value="mujer" id="mujer" class="custom-control-input">
                                                 <label class="custom-control-label" for="mujer">Mujer</label>
                                             </div>
                                         </div>
@@ -404,7 +472,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">lock_open</i></div>
                                                 </div>
-                                                <input type="password" class="form-control form-control-lg" id="contraseña-uno" placeholder="Contraseña">
+                                                <input type="password" class="form-control form-control-lg" name="passuno" id="contraseña-uno" placeholder="Contraseña">
                                             </div>
                                         </div>
 
@@ -414,12 +482,12 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">lock_open</i></div>
                                                 </div>
-                                                <input type="password" class="form-control form-control-lg" id="contraseña-dos" placeholder="Repetir Contraseña">
+                                                <input type="password" class="form-control form-control-lg" name="passdos" id="contraseña-dos" placeholder="Repetir Contraseña">
                                             </div>
                                         </div>
                                         
                                         <div class="col-12">
-                                            <button type="submit" class="btn btn-block btn-primary">Registrar</button>
+                                            <input type="submit" value="Registrar" name="registrar" class="btn btn-block btn-primary">
                                         </div>
                                     </div>
                                 </div>

@@ -64,7 +64,7 @@
                 <div class="card" style="width: 400px;">
                     <h5 class="card-header">Iniciar Sesion</h5>
                         <div class="card-body">
-                            <form action="#">
+                            <form action="login.usuario.php" method="get" name="iniciar" id="" class="">
                                 <div class="input-group mb-3">
                                     <label class="sr-only" for="usuario">Usuario</label>
                                     <div class="input-group">
@@ -86,7 +86,7 @@
                                 </div>
                                 <a href="#" class="card-link">Recuperar Usuario</a>
                                 <a href="#" class="card-link">¿Olvido su contraseña?</a>                                
-                                <button type="submit" class="btn btn-primary btn-block mt-3">Iniciar Sesion</button>
+                                <button type="submit" name="iniciar" class="btn btn-primary btn-block mt-3">Iniciar Sesion</button>
                             </form>
                         </div>                    
                 </div>
