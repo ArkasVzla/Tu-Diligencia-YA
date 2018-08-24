@@ -236,11 +236,7 @@
                                         </div>
                                                             <!-- Seleccion de paises-->
                                         <div class="col-sm-12 col-md-6 col-lg-6">
-<<<<<<< HEAD:registrate.php
-                                            <select name="pais" class="custom-select custom-select-lg mb-3">
-=======
                                             <select value="pais" name="pais" class="custom-select custom-select-lg mb-3">
->>>>>>> c301c25f479678ea6c48fe30c89c6aca2a1cbb7b:registrate.php
                                                 <option selected>Pais donde se encuentra</option>
                                                 <option value="AF">Afganistán</option>
                                                 <option value="AL">Albania</option>
