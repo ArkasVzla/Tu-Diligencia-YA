@@ -1,3 +1,66 @@
+<?php 
+    if(isset($_POST['registrar'])) {
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $correo = $_POST['correo'];
+    $usuario = $_POST['usuario'];
+    $cedula = $_POST['cedula'];
+    $pais = $_POST['pais'];
+    $direccion = $_POST['direccion'];
+    $telefono = $_POST['telefono'];
+    $sexo = $_POST['sexo'];
+    $passuno = $_POST['passuno'];
+    $passdos = $_POST['passdos'];
+
+    $errores = '';
+    
+    if(!empty($nombre)){
+        $nombre = filter_var($nombre, FILTER_SANITIZE_STRING);
+        // $nombre = trim($nombre);
+        // $nombre = htmlspecialchars($nombre);
+        // $nombre = stripcslashes($nombre);
+        echo "tu nombre es: $nombre <br>";
+    } else {
+        $errores .='Por favor ingresar el Nombre <br /> ';
+    }
+
+    if(!empty($apellido)){
+        $apellido = filter_var($apellido, FILTER_SANITIZE_STRING);
+        // $apellido = trim($apellido);
+        // $apellido = htmlspecialchars($apellido);
+        // $apellido = stripcslashes($apellido);
+        echo "tu apellido es: $apellido <br>";
+    } else {
+        $errores .='Por favor ingresar el Apellido <br />';
+    }
+
+    if(!empty($correo)){
+        $correo = filter_var($correo, FILTER_SANITIZE_EMAIL);
+        // $correo = trim($correo);
+        // $correo = htmlspecialchars($correo);
+        // $correo = stripcslashes($correo);
+        echo "tu correo es: $correo <br>";
+        if(filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+            $errores .= 'Por favor ingresa un correo valido <br />';
+        }
+    } else {
+        $errores .='Por favor ingresar el Correo <br />';
+    }
+ 
+    if(!empty($usuario)){
+        $usuario = filter_var($usuario, FILTER_SANITIZE_STRING);
+        // $usuario = trim($usuario);
+        // $usuario = htmlspecialchars($usuario);
+        // $usuario = stripcslashes($usuario);
+        echo "tu usuario es: $correo <br>";
+    } else {
+        $errores .='Por favor ingresar el usuario <br />';
+    }
+    
+} 
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +74,7 @@
 </head>
 <body>
     			<!-- Menu de Navegacion -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
             <img src="img/logo.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto;" width="200" >
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,10 +114,14 @@
             </div>
         </div>    
     </nav>
-
-
+<!-- Errores de Validacion -->
+        <div class="w-100"></div>
+        <?php if(!empty($errores)): ?>
+        <div><?php echo $errores; ?></div>
+        <?php endif; ?>
         
 	<div class="container-fluid">
+        
         <div class="row">
             <div class="col-12 d-flex justify-content-center mt-5">
                 <figure class="figure">
@@ -70,7 +137,8 @@
                 <div class="card" style="width: 750px;">
                     <div class="card-body">
                         <div class="card-title text-muted text-center"><h4>Crear cuenta</h4></div>
-                            <form action="recibe.php" method="post" name="" id="" class="">
+                        
+                            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="" id="">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
