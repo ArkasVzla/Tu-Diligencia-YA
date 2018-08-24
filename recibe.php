@@ -3,7 +3,7 @@
 // print_r($_POST);
 
 if (!$_POST) {
-    header ('Location: http://localhost/Tu-Diligencia-YA/registrate.php');
+    header('Location: http://localhost/Tu-Diligencia-YA/registrate.php');
 }
 
 $nombre = $_POST['nombre'];
