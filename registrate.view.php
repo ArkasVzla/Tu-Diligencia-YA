@@ -79,7 +79,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">face</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="nombre" id="nombre" placeholder="Ingresar Nombre" value="<?php if(isset($enviado) && isset($nombre)) echo $nombre ?>">
+                                                <input type="text" class="form-control form-control-lg" name="nombre" id="nombre" placeholder="Ingresar Nombre" value="<?php if(!$enviado && isset($nombre)) echo $nombre ?>">
                                             </div>
                                         </div>
 
@@ -89,7 +89,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">face</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="apellido" id="apellido" placeholder="Ingresar Apellido" value="<?php if(isset($enviado) && isset($apellido)) echo $apellido ?>">
+                                                <input type="text" class="form-control form-control-lg" name="apellido" id="apellido" placeholder="Ingresar Apellido" value="<?php if(!$enviado && isset($apellido)) echo $apellido ?>">
                                             </div>
                                         </div>
 
@@ -99,7 +99,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">email</i></div>
                                                 </div>
-                                                <input type="email" class="form-control form-control-lg" name="correo" id="email" placeholder="Ingresar Correo" value="<?php if(isset($enviado) && isset($correo)) echo $correo ?>">
+                                                <input type="email" class="form-control form-control-lg" name="correo" id="email" placeholder="Ingresar Correo" value="<?php if(!$enviado && isset($correo)) echo $correo ?>">
                                             </div>
                                         </div>
 
