@@ -1,6 +1,6 @@
 <?php 
 
-if(isset($_POST['registrar'])) {
+if(isset($_POST['submit'])) {
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $correo = $_POST['correo'];
@@ -9,17 +9,15 @@ if(isset($_POST['registrar'])) {
     $pais = $_POST['pais'];
     $direccion = $_POST['direccion'];
     $telefono = $_POST['telefono'];
-    $sexo = $_POST['sexo'];
-    //$sexo = var_dump($_POST['sexo']);
+    $sexo = isset($_POST['sexo']);
     $passuno = $_POST['passuno'];
     $passdos = $_POST['passdos'];
-    $enviado = '';
     $errores = '';
-    
-    
+    $enviado = '';
+        
     if(!empty($nombre)){
         $nombre = filter_var($nombre, FILTER_SANITIZE_STRING);
-        // $nombre = trim($nombre);
+        $nombre = trim($nombre);
         // $nombre = htmlspecialchars($nombre);
         // $nombre = stripcslashes($nombre);
     } else {
@@ -28,7 +26,7 @@ if(isset($_POST['registrar'])) {
 
     if(!empty($apellido)){
         $apellido = filter_var($apellido, FILTER_SANITIZE_STRING);
-        // $apellido = trim($apellido);
+        $apellido = trim($apellido);
         // $apellido = htmlspecialchars($apellido);
         // $apellido = stripcslashes($apellido);
     } else {
@@ -37,7 +35,7 @@ if(isset($_POST['registrar'])) {
 
     if(!empty($correo)){
         $correo = filter_var($correo, FILTER_SANITIZE_EMAIL);
-        // $correo = trim($correo);
+        $correo = trim($correo);
         // $correo = htmlspecialchars($correo);
         // $correo = stripcslashes($correo);
         if(!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
@@ -49,7 +47,7 @@ if(isset($_POST['registrar'])) {
  
     if(!empty($usuario)){
         $usuario = filter_var($usuario, FILTER_SANITIZE_STRING);
-        // $usuario = trim($usuario);
+        $usuario = trim($usuario);
         // $usuario = htmlspecialchars($usuario);
         // $usuario = stripcslashes($usuario);
     } else {
@@ -58,7 +56,7 @@ if(isset($_POST['registrar'])) {
 
     if(!empty($cedula)){
         $cedula = filter_var($cedula, FILTER_SANITIZE_STRING);
-        // $cedula = trim($cedula);
+        $cedula = trim($cedula);
         // $usuario = htmlspecialchars($cedula);
         // $usuario = stripslashes($cedula);
     }else {
@@ -67,7 +65,7 @@ if(isset($_POST['registrar'])) {
 
     if(!empty($pais)){
         $pais = filter_var($pais, FILTER_SANITIZE_STRING);
-        // $pais = trim($pais);
+        $pais = trim($pais);
         // $pais = htmlspecialchars($pais);
         // $pais = stripcslashes($pais);
     } else{
@@ -76,7 +74,7 @@ if(isset($_POST['registrar'])) {
 
     if(!empty($direccion)){
         $direccion = filter_var($direccion, FILTER_SANITIZE_STRING);
-        // $direccion = trim($direccion);
+        $direccion = trim($direccion);
         // $direccion = htmlspecialchars($direccion);
         // $direccion = stripslashes($direccion);
     }else{
@@ -85,14 +83,14 @@ if(isset($_POST['registrar'])) {
 
     if(!empty($telefono)){
         $telefono = filter_var($telefono, FILTER_SANITIZE_STRING);
-        // $telefono = trim($telefono);
+        $telefono = trim($telefono);
         // $telefono = htmlspecialchars($telefono);
         // $telefono = stripcslashes($telefono);
     }else{
         $errores .= 'Por favor ingresar un Nº Telefono <br />';
     }
 
-    if(isset($sexo)){
+    if(isset($_POST['sexo'])){
         $sexo = $_POST['sexo'];
     }else{
         $errores .= 'Por favor ingresar un genero <br />';
@@ -100,7 +98,7 @@ if(isset($_POST['registrar'])) {
 
     if(!empty($passuno)){
         $passuno = filter_var($passuno, FILTER_SANITIZE_NUMBER_INT);
-        // $passuno = trim($passuno);
+        $passuno = trim($passuno);
         // $passuno = htmlspecialchars($passuno);
         // $passuno = stripcslashes($passuno);
     }else{
@@ -109,7 +107,7 @@ if(isset($_POST['registrar'])) {
 
     if(!empty($passdos)){
         $passdos = filter_var($passdos, FILTER_SANITIZE_NUMBER_INT);
-        // $passdos = trim($passdos);
+        $passdos = trim($passdos);
         // $passdos = htmlspecialchars($passdos);
         // $passdos = stripcslashes($passdos);
     }else{
