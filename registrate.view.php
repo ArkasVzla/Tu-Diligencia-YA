@@ -79,7 +79,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">face</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="nombre" id="nombre" placeholder="Ingresar Nombre">
+                                                <input type="text" class="form-control form-control-lg" name="nombre" id="nombre" placeholder="Ingresar Nombre" value="">
                                             </div>
                                         </div>
 
@@ -185,17 +185,20 @@
                                                 <input type="password" class="form-control form-control-lg" name="passdos" id="contraseña-dos" placeholder="Repetir Contraseña">
                                             </div>
                                         </div>
-                                        <!-- Errores de Validacion -->
-                                        <div class="w-100"></div>
-                                        <?php if(!empty($errores)): ?>
-                                            <div class="alert alert-danger" role="alert">
-                                                <?php echo $errores; ?>
-                                            </div>
-                                        <?php elseif($enviado): ?>
-                                            <div class="alert alert-danger" role="alert">
-                                                <p>Sus datos han sido registrado Exitosamente</p>
-                                            </div>
-                                        <?php endif ?>
+                                        
+                                        <div class="col-12">
+                                            <!-- Errores de Validacion -->
+                                            <div class="w-100"></div>
+                                            <?php if(!empty($errores)): ?>
+                                                <div class="alert alert-danger" role="alert">
+                                                    <?php echo $errores; ?>
+                                                </div>
+                                            <?php elseif($enviado): ?>
+                                                <div class="alert alert-success text-center" role="alert">
+                                                    <p>Sus datos han sido registrado Exitosamente</p>
+                                                </div>
+                                            <?php endif ?>
+                                        </div>
                                         
                                         <div class="col-12">
                                             <input type="submit" value="Registrar" name="registrar" class="btn btn-block btn-primary">

@@ -12,9 +12,9 @@ if(isset($_POST['registrar'])) {
     $sexo = $_POST['sexo'];
     $passuno = $_POST['passuno'];
     $passdos = $_POST['passdos'];
-
-    $errores = '';
     $enviado = '';
+    $errores = '';
+    
     
     if(!empty($nombre)){
         $nombre = filter_var($nombre, FILTER_SANITIZE_STRING);
@@ -74,7 +74,7 @@ if(isset($_POST['registrar'])) {
         // $pais = trim($pais);
         // $pais = htmlspecialchars($pais);
         // $pais = stripcslashes($pais);
-        echo "Tu pais es: $pais";
+        echo "Tu pais es: $pais <br />";
     } else{
         $errores .= 'Por favor ingresa el pais <br />';
     }
@@ -93,12 +93,14 @@ if(isset($_POST['registrar'])) {
         // $telefono = trim($telefono);
         // $telefono = htmlspecialchars($telefono);
         // $telefono = stripcslashes($telefono);
+        echo "tu Telefono es: $telefono <br />";
     }else{
         $errores .= 'Por favor ingresar un Nº Telefono <br />';
     }
 
     if(isset($sexo)){
         $sexo = $_POST['sexo'];
+        echo "tu genero es: $sexo <br />";
     }else{
         $errores .= 'Por favor ingresar un genero <br />';
     }
@@ -120,12 +122,12 @@ if(isset($_POST['registrar'])) {
     }else{
         $errores .= 'Ingressa una contraseña <br />';
     }
-    
+
     if($passuno == $passdos){
-        $errores .= 'las contraseñas son iguales <br />';
+        $contraseña;
     }else{
-        $errores .= 'Las contraseña no coincide <br />';
-    }
+        $errores .= 'la contraseña no coincide';
+    }    
 
     //Validacion si todos los datos estan enviandos
     
