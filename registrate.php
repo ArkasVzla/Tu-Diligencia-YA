@@ -9,7 +9,7 @@ if(isset($_POST['submit'])) {
     $pais = $_POST['pais'];
     $direccion = $_POST['direccion'];
     $telefono = $_POST['telefono'];
-    $sexo = isset($_POST['sexo']);
+    $sexo = $_POST['sexo'];
     $passuno = $_POST['passuno'];
     $passdos = $_POST['passdos'];
     $errores = '';

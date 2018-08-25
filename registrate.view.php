@@ -193,7 +193,7 @@
                                                 <div class="alert alert-danger" role="alert">
                                                     <?php echo $errores; ?>
                                                 </div>
-                                            <?php elseif (isset($enviado)): ?> 
+                                            <?php elseif ($enviado): ?> 
                                                 <div class="alert alert-success text-center" role="alert">
                                                     Sus datos han sido registrado Exitosamente
                                                 </div>                                               
