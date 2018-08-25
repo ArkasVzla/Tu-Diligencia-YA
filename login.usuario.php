@@ -43,7 +43,7 @@
                                     </div>  
                                 </form>
                             </div>
-                        <!-- ///SECCION DE LAS ENTRADAS DE SERVICIOS -->
+                        <!-- ///SECCION DE LAS ENTRADAS -->
                             <div class="tab-pane fade" id="v-pills-entrada" role="tabpanel" aria-labelledby="v-pills-entrada-tab">
                                 <h3 class="titulo">Mis Servicios</h3>
                                 <form action="#">
