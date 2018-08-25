@@ -56,7 +56,7 @@
         <div class="row">
             <div class="col-12 d-flex justify-content-center mt-5">
                 <figure class="figure">
-                    <img src="img/logo.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto; mt-5" width="250">
+                    <img src="img/iniciar.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto; mt-5" width="150">
                 </figure>
             </div>
 
@@ -64,7 +64,7 @@
                 <div class="card" style="width: 400px;">
                     <h5 class="card-header">Iniciar Sesion</h5>
                         <div class="card-body">
-                            <form action="login.usuario.php" method="get" name="iniciar" id="" class="">
+                            <form action="login.usuario.php" method="post" name="login" id="login" class="">
                                 <div class="input-group mb-3">
                                     <label class="sr-only" for="usuario">Usuario</label>
                                     <div class="input-group">

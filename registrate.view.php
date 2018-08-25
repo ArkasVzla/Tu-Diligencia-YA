@@ -57,7 +57,7 @@
         <div class="row">
             <div class="col-12 d-flex justify-content-center mt-5">
                 <figure class="figure">
-                    <img src="img/logo.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto; mt-5" width="350">
+                    <img src="img/registrate.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto; mt-5" width="150">
                 </figure>
             </div>
         </div>
