@@ -137,7 +137,7 @@
                                             <label class="sr-only" for="direccion">Direccion</label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
-                                                    <div class="input-group-text"><i class="material-icons">location_on</i></div>
+                                                    <div class="input-group-text"><i class="material-icons">directions</i></div>
                                                 </div>
                                                 <input type="text" class="form-control form-control-lg" name="direccion" id="direccion" placeholder="Direccion" value="<?php if(isset($enviado) && isset($direccion)) echo $direccion ?>">
                                             </div>
@@ -195,7 +195,7 @@
                                                 </div>
                                             <?php elseif (isset($enviado)): ?> 
                                                 <div class="alert alert-success text-center" role="alert">
-                                                    <p>Sus datos han sido registrado Exitosamente</p>
+                                                    Sus datos han sido registrado Exitosamente
                                                 </div>                                               
                                             <?php endif ?>
                                         </div>
