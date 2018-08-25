@@ -31,7 +31,6 @@ if(isset($_POST['registrar'])) {
         // $apellido = trim($apellido);
         // $apellido = htmlspecialchars($apellido);
         // $apellido = stripcslashes($apellido);
-        echo "tu apellido es: $apellido <br>";
     } else {
         $errores .='Por favor ingresar el Apellido <br />';
     }
@@ -41,7 +40,6 @@ if(isset($_POST['registrar'])) {
         // $correo = trim($correo);
         // $correo = htmlspecialchars($correo);
         // $correo = stripcslashes($correo);
-        echo "tu correo es: $correo <br>";
         if(!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
             $errores .= 'Por favor ingresa un correo valido <br />';
         }
@@ -54,7 +52,6 @@ if(isset($_POST['registrar'])) {
         // $usuario = trim($usuario);
         // $usuario = htmlspecialchars($usuario);
         // $usuario = stripcslashes($usuario);
-        echo "tu usuario es: $usuario <br>";
     } else {
         $errores .='Por favor ingresar el usuario <br />';
     }
@@ -64,7 +61,6 @@ if(isset($_POST['registrar'])) {
         // $cedula = trim($cedula);
         // $usuario = htmlspecialchars($cedula);
         // $usuario = stripslashes($cedula);
-        echo "tu cedula es: $cedula <br />";
     }else {
         $errores .='Por favor ingresar la cedula <br />';
     }
@@ -74,7 +70,6 @@ if(isset($_POST['registrar'])) {
         // $pais = trim($pais);
         // $pais = htmlspecialchars($pais);
         // $pais = stripcslashes($pais);
-        echo "Tu pais es: $pais <br />";
     } else{
         $errores .= 'Por favor ingresa el pais <br />';
     }
@@ -93,14 +88,12 @@ if(isset($_POST['registrar'])) {
         // $telefono = trim($telefono);
         // $telefono = htmlspecialchars($telefono);
         // $telefono = stripcslashes($telefono);
-        echo "tu Telefono es: $telefono <br />";
     }else{
         $errores .= 'Por favor ingresar un Nº Telefono <br />';
     }
 
     if(isset($sexo)){
         $sexo = $_POST['sexo'];
-        echo "tu genero es: $sexo <br />";
     }else{
         $errores .= 'Por favor ingresar un genero <br />';
     }

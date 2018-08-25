@@ -123,7 +123,7 @@
                                             </div>
                                         </div>
                                                             <!-- Seleccion de paises-->
-                                        <div class="col-sm-12 col-md-6 col-lg-6">
+                                        <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
                                         <label class="sr-only" for="pais">Pais</label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
