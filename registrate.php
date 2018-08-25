@@ -21,7 +21,6 @@ if(isset($_POST['registrar'])) {
         // $nombre = trim($nombre);
         // $nombre = htmlspecialchars($nombre);
         // $nombre = stripcslashes($nombre);
-        echo "tu nombre es: $nombre <br>";
     } else {
         $errores .='Por favor ingresar el Nombre <br /> ';
     }
