@@ -10,6 +10,7 @@ if(isset($_POST['registrar'])) {
     $direccion = $_POST['direccion'];
     $telefono = $_POST['telefono'];
     $sexo = $_POST['sexo'];
+    //$sexo = var_dump($_POST['sexo']);
     $passuno = $_POST['passuno'];
     $passdos = $_POST['passdos'];
     $enviado = '';

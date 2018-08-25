@@ -139,7 +139,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">location_on</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="direccion" id="direccion" placeholder="Direccion" value="<?php if(!$enviado $$ isset($direccion)) echo $direccion ?>">
+                                                <input type="text" class="form-control form-control-lg" name="direccion" id="direccion" placeholder="Direccion" value="<?php if(!$enviado && isset($direccion)) echo $direccion ?>">
                                             </div>
                                         </div>
                                                             <!-- Telefono de usuarios-->
