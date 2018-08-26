@@ -70,7 +70,7 @@
                     <div class="card-body">
                         <div class="card-title text-muted text-center"><h4>Crear cuenta</h4></div>
                         
-                            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="" id="">
+                            <form action="registrate.php" method="post" name="" id="">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
@@ -79,7 +79,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">face</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="nombre" id="nombre" placeholder="Ingresar Nombre" value="<?php if(!$enviado && isset($nombre)) echo $nombre ?>">
+                                                <input type="text" class="form-control form-control-lg" name="nombre" id="nombre" placeholder="Ingresar Nombre" value="<?php if(isset($enviado) && isset($nombre)) echo $nombre ?>">
                                             </div>
                                         </div>
 
@@ -89,7 +89,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">face</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="apellido" id="apellido" placeholder="Ingresar Apellido" value="<?php if(!$enviado && isset($apellido)) echo $apellido ?>">
+                                                <input type="text" class="form-control form-control-lg" name="apellido" id="apellido" placeholder="Ingresar Apellido" value="">
                                             </div>
                                         </div>
 
@@ -99,7 +99,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">email</i></div>
                                                 </div>
-                                                <input type="email" class="form-control form-control-lg" name="correo" id="email" placeholder="Ingresar Correo" value="<?php if(!$enviado && isset($correo)) echo $correo ?>">
+                                                <input type="email" class="form-control form-control-lg" name="correo" id="email" placeholder="Ingresar Correo" value="">
                                             </div>
                                         </div>
 
@@ -109,7 +109,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">account_circle</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="usuario" id="usuario" placeholder="Nombre de Usuario" value="<?php if(!$enviado && isset($usuario)) echo $usuario ?>">
+                                                <input type="text" class="form-control form-control-lg" name="usuario" id="usuario" placeholder="Nombre de Usuario" value="">
                                             </div>
                                         </div>
 
@@ -119,7 +119,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text lead">V-</div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="cedula" id="cedula" placeholder="Cedula" value="<?php if(!$enviado && isset($cedula)) echo $cedula ?>">
+                                                <input type="text" class="form-control form-control-lg" name="cedula" id="cedula" placeholder="Cedula" value="">
                                             </div>
                                         </div>
                                                             <!-- Seleccion de paises-->
@@ -129,7 +129,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text lead"><i class="material-icons">location_on</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="pais" id="pais" placeholder="Pais donde se encuentra" value="<?php if(!$enviado && isset($pais)) echo $pais ?>">
+                                                <input type="text" class="form-control form-control-lg" name="pais" id="pais" placeholder="Pais donde se encuentra" value="">
                                             </div>
                                         </div>
                                                         <!-- Direccion del Usuario-->
@@ -139,7 +139,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">directions</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="direccion" id="direccion" placeholder="Direccion" value="<?php if(!$enviado && isset($direccion)) echo $direccion ?>">
+                                                <input type="text" class="form-control form-control-lg" name="direccion" id="direccion" placeholder="Direccion" value="">
                                             </div>
                                         </div>
                                                             <!-- Telefono de usuarios-->
@@ -149,7 +149,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">phone</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="telefono" id="telefono" placeholder="Telefono" value="<?php if(!$enviado && isset($telefono)) echo $telefono ?>">
+                                                <input type="text" class="form-control form-control-lg" name="telefono" id="telefono" placeholder="Telefono" value="">
                                             </div>
                                         </div>
                                         <!-- Seccion de generos-->
@@ -193,7 +193,7 @@
                                                 <div class="alert alert-danger" role="alert">
                                                     <?php echo $errores; ?>
                                                 </div>
-                                            <?php elseif ($enviado): ?> 
+                                            <?php elseif (isset($enviado)): ?> 
                                                 <div class="alert alert-success text-center" role="alert">
                                                     Sus datos han sido registrado Exitosamente
                                                 </div>                                               

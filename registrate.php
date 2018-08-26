@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 if(isset($_POST['submit'])) {
     $nombre = $_POST['nombre'];
@@ -9,7 +9,7 @@ if(isset($_POST['submit'])) {
     $pais = $_POST['pais'];
     $direccion = $_POST['direccion'];
     $telefono = $_POST['telefono'];
-    $sexo = $_POST['sexo'];
+    $sexo = isset($_POST['sexo']);
     $passuno = $_POST['passuno'];
     $passdos = $_POST['passdos'];
     $errores = '';
@@ -90,7 +90,7 @@ if(isset($_POST['submit'])) {
         $errores .= 'Por favor ingresar un Nº Telefono <br />';
     }
 
-    if(isset($_POST['sexo'])){
+    if(!empty($sexo)){
         $sexo = $_POST['sexo'];
     }else{
         $errores .= 'Por favor ingresar un genero <br />';
@@ -114,20 +114,17 @@ if(isset($_POST['submit'])) {
         $errores .= 'Ingressa una contraseña <br />';
     }
 
-    if($passuno == $passdos){
-        $contraseña;
-    }else{
+    if($passuno !== $passdos){
         $errores .= 'la contraseña no coincide';
-    }    
+    }   
 
     //Validacion si todos los datos estan enviandos
     
     if(!$errores){
-        $enviado = 'true';     
+        $enviado = true;
     }
 } 
 
 require 'registrate.view.php';
-
 ?>
     
