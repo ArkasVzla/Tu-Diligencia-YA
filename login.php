@@ -45,7 +45,7 @@
             </ul>
             
                 <form class="form-inline">
-	    			<a class="btn btn-outline-secondary mr-2" href="registrate.php">Registrate</a>
+	    			<a class="btn btn-outline-secondary mr-2" href="registrate.view.php">Registrate</a>
                       <a class="btn btn-outline-secondary" href="login.php">Ingresar</a>
 	  		    </form>	
             </div>
