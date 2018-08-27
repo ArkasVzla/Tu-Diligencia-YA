@@ -21,6 +21,14 @@ body {
 	font-size: 16px;
 	font-family: 'Open Sans', sans-serif;
 }
+
+textarea {
+	height: 300px;
+	max-height: 300px;
+	min-height: 150px;
+
+  }
+  
 /* --- ---- BARRA LATERAL --- ----  */
 
 .barra-lateral {
@@ -108,8 +116,7 @@ body {
 	height: 400px;
 	min-height: 200px;
 	max-height: 400px;
-	max-width: 100%;
-	min-width: 100%;
+	
 }
 
 /* .main .widget form button {
