@@ -55,7 +55,7 @@
 	<div class="container-fluid">
         
         <div class="row">
-            <div class="col-12 d-flex justify-content-center mt-5">
+            <div class="col-12 d-flex justify-content-center mt-3">
                 <figure class="figure">
                     <img src="img/registrate.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto; mt-5" width="150">
                 </figure>
@@ -89,7 +89,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">face</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="apellido" id="apellido" placeholder="Ingresar Apellido" value="">
+                                                <input type="text" class="form-control form-control-lg" name="apellido" id="apellido" placeholder="Ingresar Apellido" value="<?php if(isset($enviado) && isset($apellido)) echo $apellido ?>">
                                             </div>
                                         </div>
 
@@ -99,7 +99,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">email</i></div>
                                                 </div>
-                                                <input type="email" class="form-control form-control-lg" name="correo" id="email" placeholder="Ingresar Correo" value="">
+                                                <input type="email" class="form-control form-control-lg" name="correo" id="email" placeholder="Ingresar Correo" value="<?php if(isset($enviado) && isset($correo)) echo $correo ?>">
                                             </div>
                                         </div>
 
@@ -109,7 +109,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">account_circle</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="usuario" id="usuario" placeholder="Nombre de Usuario" value="">
+                                                <input type="text" class="form-control form-control-lg" name="usuario" id="usuario" placeholder="Nombre de Usuario" value="<?php if(isset($enviado) && isset($usuario)) echo $usuario ?>">
                                             </div>
                                         </div>
 
@@ -119,7 +119,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text lead">V-</div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="cedula" id="cedula" placeholder="Cedula" value="">
+                                                <input type="text" class="form-control form-control-lg" name="cedula" id="cedula" placeholder="Cedula" value="<?php if(isset($enviado) && isset($cedula)) echo $cedula ?>">
                                             </div>
                                         </div>
                                                             <!-- Seleccion de paises-->
@@ -129,7 +129,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text lead"><i class="material-icons">location_on</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="pais" id="pais" placeholder="Pais donde se encuentra" value="">
+                                                <input type="text" class="form-control form-control-lg" name="pais" id="pais" placeholder="Pais donde se encuentra" value="<?php if(isset($enviado) && isset($pais)) echo $pais ?>">
                                             </div>
                                         </div>
                                                         <!-- Direccion del Usuario-->
@@ -139,7 +139,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">directions</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="direccion" id="direccion" placeholder="Direccion" value="">
+                                                <input type="text" class="form-control form-control-lg" name="direccion" id="direccion" placeholder="Direccion" value="<?php if(isset($enviado) && isset($direccion)) echo $direccion ?>">
                                             </div>
                                         </div>
                                                             <!-- Telefono de usuarios-->
@@ -149,7 +149,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">phone</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="telefono" id="telefono" placeholder="Telefono" value="">
+                                                <input type="text" class="form-control form-control-lg" name="telefono" id="telefono" placeholder="Telefono" value="<?php if(isset($enviado) && isset($telefono)) echo $telefono ?>">
                                             </div>
                                         </div>
                                         <!-- Seccion de generos-->
@@ -172,7 +172,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">lock_open</i></div>
                                                 </div>
-                                                <input type="password" class="form-control form-control-lg" name="passuno" id="contraseña-uno" placeholder="Contraseña" value="">
+                                                <input type="password" class="form-control form-control-lg" name="passuno" id="contraseña-uno" placeholder="Contraseña" value="<?php if(isset($enviado) && isset($passuno)) echo $passuno ?>">
                                             </div>
                                         </div>
 
@@ -182,7 +182,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">lock_open</i></div>
                                                 </div>
-                                                <input type="password" class="form-control form-control-lg" name="passdos" id="contraseña-dos" placeholder="Repetir Contraseña" value="">
+                                                <input type="password" class="form-control form-control-lg" name="passdos" id="contraseña-dos" placeholder="Repetir Contraseña" value="<?php if(isset($enviado) && isset($passdos)) echo $passdos ?>">
                                             </div>
                                         </div>
                                         
@@ -215,75 +215,6 @@
                                                         <!-- Seccion de Footer -->
 
     <footer class="container-fluid p-3 mt-3" id="navegador-tudiligenciaya">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 col-md-3 col-lg-3 text-center d-flex justify-content-center">
-                    <figure class="figure">
-                        <img src="img/logo.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto; mt-5" width="300">
-                        <small class="text-muted">@ Copyright Venezuela 2018</small>
-                    </figure>
-				</div>
-
-				<div class="col-sm-12 col-md-3 col-lg-3">
-					<h1 class="display-4 text-muted text-center">Inicio</h1>
-						<ul class="nav flex-column text-center">
-							<li class="nav-item">
-								<a href="#LaEmpresa" class="nav-link">La Empresa</a>
-							</li>
-
-							<li class="nav-item">
-								<a href="#Nosotros" class="nav-link">Nosotros</a>
-							</li>
-
-							<li class="nav-item">
-								<a href="#Servicios" class="nav-link">Servicios</a>
-							</li>
-
-							<li class="nav-item">
-								<a href="#Contacto" class="nav-link">Contacto</a>
-							</li>
-						</ul>
-				</div>
-
-				<div class="col-sm-12 col-md-3 col-lg-3">
-					<h1 class="display-4 text-muted text-center">Siguenos</h1>
-						<ul class="nav flex-column text-center">
-							<li class="nav-item">
-								<a href="https://www.facebook.com/tudiligenciaya2018/" class="nav-link">Facebook</a>
-							</li>
-
-							<li class="nav-item">
-								<a href="https://www.instagram.com/tudiligenciaya/" class="nav-link">Instagram</a>
-							</li>
-
-							<li class="nav-item">
-								<a href="https://twitter.com/tu_diligenciaya?lang=es" class="nav-link">Twitter</a>
-							</li>
-						</ul>
-				</div>
-
-				<div class="col-sm-12 col-md-3 col-lg-3">
-					<h1 class="display-4 text-muted text-center">Contacto</h1>
-						<ul class="nav flex-column text-center">
-							<li class="nav-item">
-								<p class="text-muted">Tlf.: +58424000000</p>
-							</li>
-
-							<li class="nav-item">
-								<p class="text-muted">Tlf.: +58424000000</p>
-							</li>
-
-							<li class="nav-item">
-								<p class="text-muted">Tlf.: +58424000000</p>
-							</li>
-
-							<li class="nav-item">
-								<a href="#" class="text-muted">tudiligenciaya2018@gmail.com</a>
-							</li>
-						</ul>
-				</div>
-			</div>
-        </div>
         <nav class="navbar navbar-light bg-light justify-content-center">
             <a class="text-muted">© Powered By JDeverloper 2018 +584241296335</a>
         </nav>

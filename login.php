@@ -94,11 +94,11 @@
         </div>
     </div>
 
-    <footer class="container-fluid bg-light " id="navegador-tudiligenciaya">
-        <nav class="navbar navbar-light bg-light justify-content-center fixed-bottom">
+    <footer class="container-fluid p-3 mt-3" id="navegador-tudiligenciaya">
+        <nav class="navbar navbar-light bg-light justify-content-center">
             <a class="text-muted">© Powered By JDeverloper 2018 +584241296335</a>
         </nav>
-    </footer>   
+	</footer>  
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
