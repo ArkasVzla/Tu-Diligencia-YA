@@ -263,7 +263,7 @@
 
 					<div class="form-group">
 						<label class="text-secondary col-form-label-md border-dark" for="contenido">Mensaje</label>
-						<textarea class="form-control border-secondary"name="mensaje" id="mensaje" max-width="400" max-height="300" rows="3" placeholder="Escribir mensaje"></textarea>
+						<textarea class="form-control border-secondary textarea" name="mensaje" id="mensaje" rows="3" placeholder="Escribir mensaje"></textarea>
 					</div>
 
                     <?php if (!empty($errores)): ?>

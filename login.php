@@ -71,7 +71,7 @@
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="material-icons">account_circle</i></div>
                                         </div>
-                                        <input type="text" class="form-control form-control-lg" id="usuario" placeholder="Ingresar Usuario">
+                                        <input type="text" class="form-control form-control-md" id="usuario" placeholder="Ingresar Usuario">
                                     </div>
                                 </div>
 
@@ -81,7 +81,7 @@
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="material-icons">lock_open</i></div>
                                         </div>
-                                        <input type="password" class="form-control form-control-lg" id="contraseña-uno" placeholder="Contraseña">
+                                        <input type="password" class="form-control form-control-md" id="contraseña-uno" placeholder="Contraseña">
                                     </div>
                                 </div>
                                 <a href="#" class="card-link">Recuperar Usuario</a>
@@ -94,8 +94,8 @@
         </div>
     </div>
 
-    <footer class="container-fluid p-3 mt-3" id="navegador-tudiligenciaya">
-        <nav class="navbar navbar-light bg-light justify-content-center">
+    <footer class="container-fluid p-3 mt-3" id="navegador-tudiligenciaya" style="position: relative; bottom: 0%; width: 100%">
+        <nav class="navbar justify-content-center">
             <a class="text-muted">© Powered By JDeverloper 2018 +584241296335</a>
         </nav>
 	</footer>  

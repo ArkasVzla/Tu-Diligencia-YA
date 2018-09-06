@@ -79,7 +79,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">face</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="nombre" id="nombre" placeholder="Ingresar Nombre" value="<?php if(isset($enviado) && isset($nombre)) echo $nombre ?>">
+                                                <input type="text" class="form-control form-control-md" name="nombre" id="nombre" placeholder="Ingresar Nombre" value="<?php if(isset($enviado) && isset($nombre)) echo $nombre ?>">
                                             </div>
                                         </div>
 
@@ -89,7 +89,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">face</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="apellido" id="apellido" placeholder="Ingresar Apellido" value="<?php if(isset($enviado) && isset($apellido)) echo $apellido ?>">
+                                                <input type="text" class="form-control form-control-md" name="apellido" id="apellido" placeholder="Ingresar Apellido" value="<?php if(isset($enviado) && isset($apellido)) echo $apellido ?>">
                                             </div>
                                         </div>
 
@@ -99,7 +99,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">email</i></div>
                                                 </div>
-                                                <input type="email" class="form-control form-control-lg" name="correo" id="email" placeholder="Ingresar Correo" value="<?php if(isset($enviado) && isset($correo)) echo $correo ?>">
+                                                <input type="email" class="form-control form-control-md" name="correo" id="email" placeholder="Ingresar Correo" value="<?php if(isset($enviado) && isset($correo)) echo $correo ?>">
                                             </div>
                                         </div>
 
@@ -109,7 +109,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">account_circle</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="usuario" id="usuario" placeholder="Nombre de Usuario" value="<?php if(isset($enviado) && isset($usuario)) echo $usuario ?>">
+                                                <input type="text" class="form-control form-control-md" name="usuario" id="usuario" placeholder="Nombre de Usuario" value="<?php if(isset($enviado) && isset($usuario)) echo $usuario ?>">
                                             </div>
                                         </div>
 
@@ -119,7 +119,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text lead">V-</div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="cedula" id="cedula" placeholder="Cedula" value="<?php if(isset($enviado) && isset($cedula)) echo $cedula ?>">
+                                                <input type="text" class="form-control form-control-md" name="cedula" id="cedula" placeholder="Cedula" value="<?php if(isset($enviado) && isset($cedula)) echo $cedula ?>">
                                             </div>
                                         </div>
                                                             <!-- Seleccion de paises-->
@@ -129,7 +129,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text lead"><i class="material-icons">location_on</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="pais" id="pais" placeholder="Pais donde se encuentra" value="<?php if(isset($enviado) && isset($pais)) echo $pais ?>">
+                                                <input type="text" class="form-control form-control-md" name="pais" id="pais" placeholder="Pais donde se encuentra" value="<?php if(isset($enviado) && isset($pais)) echo $pais ?>">
                                             </div>
                                         </div>
                                                         <!-- Direccion del Usuario-->
@@ -139,32 +139,20 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">directions</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="direccion" id="direccion" placeholder="Direccion" value="<?php if(isset($enviado) && isset($direccion)) echo $direccion ?>">
+                                                <input type="text" class="form-control form-control-md" name="direccion" id="direccion" placeholder="Direccion" value="<?php if(isset($enviado) && isset($direccion)) echo $direccion ?>">
                                             </div>
                                         </div>
                                                             <!-- Telefono de usuarios-->
-                                        <div class="col-sm-12 col-md-6 col-lg-6">
+                                        <div class="col-sm-12 col-md-12 col-lg-12 mb-3">
                                             <label class="sr-only" for="telefono">Telefono</label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">phone</i></div>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg" name="telefono" id="telefono" placeholder="Telefono" value="<?php if(isset($enviado) && isset($telefono)) echo $telefono ?>">
+                                                <input type="text" class="form-control form-control-md" name="telefono" id="telefono" placeholder="Telefono" value="<?php if(isset($enviado) && isset($telefono)) echo $telefono ?>">
                                             </div>
                                         </div>
-                                        <!-- Seccion de generos-->
-                                        <div class="col-sm-12 col-md-6 col-lg-6 mb-2">
-                                            <h5 class="text-muted">Genero</h5>
-                                            <div class="custom-control custom-radio custom-control-inline mt-0">
-                                                <input type="radio" value="hombre" id="hombre" class="custom-control-input" name="sexo">
-                                                <label class="custom-control-label" for="hombre">Hombre</label>
-                                            </div>
-
-                                            <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" value="mujer" id="mujer" class="custom-control-input" name="sexo">
-                                                <label class="custom-control-label" for="mujer">Mujer</label>
-                                            </div>
-                                        </div>
+                                        
                                                         <!-- Seccion de la contraseña-->
                                         <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
                                             <label class="sr-only" for="contraseña-uno">Contraseña</label>
@@ -172,7 +160,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">lock_open</i></div>
                                                 </div>
-                                                <input type="password" class="form-control form-control-lg" name="passuno" id="contraseña-uno" placeholder="Contraseña" value="<?php if(isset($enviado) && isset($passuno)) echo $passuno ?>">
+                                                <input type="password" class="form-control form-control-md" name="passuno" id="contraseña-uno" placeholder="Contraseña" value="<?php if(isset($enviado) && isset($passuno)) echo $passuno ?>">
                                             </div>
                                         </div>
 
@@ -182,7 +170,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="material-icons">lock_open</i></div>
                                                 </div>
-                                                <input type="password" class="form-control form-control-lg" name="passdos" id="contraseña-dos" placeholder="Repetir Contraseña" value="<?php if(isset($enviado) && isset($passdos)) echo $passdos ?>">
+                                                <input type="password" class="form-control form-control-md" name="passdos" id="contraseña-dos" placeholder="Repetir Contraseña" value="<?php if(isset($enviado) && isset($passdos)) echo $passdos ?>">
                                             </div>
                                         </div>
                                         
@@ -214,8 +202,8 @@
         
                                                         <!-- Seccion de Footer -->
 
-    <footer class="container-fluid p-3 mt-3" id="navegador-tudiligenciaya">
-        <nav class="navbar navbar-light bg-light justify-content-center">
+    <footer class="footer container-fluid p-3 mt-3" id="navegador-tudiligenciaya">
+        <nav class="navbar justify-content-center">
             <a class="text-muted">© Powered By JDeverloper 2018 +584241296335</a>
         </nav>
 	</footer>

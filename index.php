@@ -6,7 +6,6 @@ if(isset($_POST['submit'])){
     $correo = $_POST['correo'];
     $mensaje = $_POST['mensaje'];
 
-
     $errores = '';
     $enviado = '';
 

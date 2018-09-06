@@ -9,7 +9,6 @@ if(isset($_POST['submit'])) {
     $pais = $_POST['pais'];
     $direccion = $_POST['direccion'];
     $telefono = $_POST['telefono'];
-    $sexo = isset($_POST['sexo']);
     $passuno = $_POST['passuno'];
     $passdos = $_POST['passdos'];
     $errores = '';
@@ -90,12 +89,7 @@ if(isset($_POST['submit'])) {
         $errores .= 'Por favor ingresar un Nº Telefono <br />';
     }
 
-    if(!empty($sexo)){
-        $sexo = $_POST['sexo'];
-    }else{
-        $errores .= 'Por favor ingresar un genero <br />';
-    }
-
+    
     if(!empty($passuno)){
         $passuno = filter_var($passuno, FILTER_SANITIZE_NUMBER_INT);
         $passuno = trim($passuno);
