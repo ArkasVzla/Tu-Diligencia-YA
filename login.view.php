@@ -45,7 +45,7 @@
             </ul>
             
                 <form class="form-inline">
-	    			<a class="btn btn-outline-secondary mr-2" href="registrate.view.php">Registrate</a>
+	    			<a class="btn btn-outline-secondary mr-2" href="registrate.php">Registrate</a>
                     <a class="btn btn-outline-secondary" href="login.php">Ingresar</a>
 	  		    </form>	
             </div>
@@ -84,6 +84,15 @@
                                         <input type="password" name="passuno" class="form-control form-control-md" id="contrasela-uno" placeholder="Contraseña">
                                     </div>
                                 </div>
+                                        <div class="col-12">
+                                            <!-- Errores de Validacion -->
+                                            <div class="w-100"></div>
+                                            <?php if (!empty($errores)): ?>
+                                                <div class="alert alert-danger" role="alert">
+                                                    <?php echo $errores; ?>
+                                                </div>                                            
+                                            <?php endif ?>
+                                        </div>
                                 <a href="#" class="card-link">Recuperar Usuario</a>
                                 <a href="#" class="card-link">¿Olvido su contraseña?</a>                                
                                 <input type="submit" name="iniciar" value="Iniciar Sesion" onclick="login.submit()" class="btn btn-primary btn-block mt-3">

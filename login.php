@@ -1,13 +1,14 @@
-<?php
+<?php session_start();
 
 if (isset($_SESSION['usuario'])) {
-    header('Location: index.php');
+    header('Location: login.php');
 }
+
+$errores = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $usuario = filter_var(strtolower($_POST['usuario']), FILTER_SANITIZE_STRING);
     $passuno = $_POST['passuno'];
-    $passuno = hash('sha512', $passuno);
 
     try{
         $conexion = new PDO('mysql:host=localhost;dbname=tudiligenciaya', 'root', '');
@@ -16,16 +17,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     $statements = $conexion->prepare(
-        "SELECT * FROM usuarios WHERE usuario = :usuario AND passuno = :passuno"
+        'SELECT * FROM usuarios WHERE usuario = :usuario AND passuno = :passuno'
     );
 
-    $statements->execute(array(
-        ':usuario' => $usuario,
-        ':passuno' => $passuno
-    ));
+    $statements->execute(array(':usuario' => $usuario, ':passuno' => $passuno));
 
     $resultado = $statements->fetch();
-    var_dump($resultado);
+    if ($resultado !== false) {
+        $_SESSION['usuario'] = $usuario;
+        header('Location: sesion.php');
+    }else {
+        $errores .= 'Datos incorrectos';
+    }
    
 }
 

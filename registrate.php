@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 
 if(isset($_POST['submit'])) {
     $nombre = $_POST['nombre'];
@@ -142,10 +142,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Error:" . $e->getMessage();
     }
     
-    $stataments = $conexion->prepare("INSERT INTO usuarios(nombre,apellido,correo,usuario,cedula,pais,direccion,passuno,passdos) VALUE('$nombre','$apellido', '$correo', '$usuario', '$cedula', '$pais', '$direccion', '$passuno', '$passdos')");
-    $stataments = $conexion->prepare("SELECT * FROM usuarios WHERE usuario = :usuario LIMIT 1");
-    $stataments->execute(array(':usuario' => $usuario));
-    $resultados = $stataments->fetch();
+    $statements = $conexion->prepare("INSERT INTO usuarios(nombre,apellido,correo,usuario,cedula,pais,direccion,passuno,passdos) VALUE('$nombre','$apellido', '$correo', '$usuario', '$cedula', '$pais', '$direccion', '$passuno', '$passdos')");
+    //$statements = $conexion->prepare("SELECT * FROM usuarios WHERE usuario = :usuario LIMIT 1");
+    $statements->execute(array(':usuario' => $usuario));
+    $resultados = $statements->fetch();
 
     if ($resultados != false) {
         $errores .= 'El usuario ya existe';
