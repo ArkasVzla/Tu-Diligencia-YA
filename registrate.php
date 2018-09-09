@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 
 if(isset($_POST['submit'])) {
     $nombre = $_POST['nombre'];
@@ -109,15 +109,50 @@ if(isset($_POST['submit'])) {
     }
 
     if($passuno !== $passdos){
-        $errores .= 'la contraseña no coincide';
+        $errores .= 'la contraseña no coincide <br />';
     }   
 
     //Validacion si todos los datos estan enviandos
-    
     if(!$errores){
         $enviado = true;
     }
 } 
+
+ // GUARDAR REGISTRO EN LA BASE DE DATOS
+
+if(isset($_SESSION['usuario'])){
+    header('Location: index.php');
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nombre = filter_var(strtolower($_POST['nombre']), FILTER_SANITIZE_STRING);
+    $apellido = filter_var(strtolower($_POST['apellido']), FILTER_SANITIZE_STRING);
+    $correo = filter_var(strtolower($_POST['correo']), FILTER_SANITIZE_STRING);
+    $usuario = filter_var(strtolower($_POST['usuario']), FILTER_SANITIZE_STRING);
+    $cedula = filter_var(strtolower($_POST['cedula']), FILTER_SANITIZE_STRING);
+    $pais = filter_var(strtolower($_POST['pais']), FILTER_SANITIZE_STRING);
+    $direccion = filter_var(strtolower($_POST['direccion']), FILTER_SANITIZE_STRING);
+    $telefono = filter_var(strtolower($_POST['telefono']), FILTER_SANITIZE_STRING);
+    $passuno = $_POST['passuno'];
+    $passHash = password_hash($passuno, PASSWORD_BCRYPT);
+    $passdos = $_POST['passdos'];
+    $passHash = password_hash($passdos, PASSWORD_BCRYPT);
+    
+    try{
+        $conexion = new PDO('mysql:host=localhost;dbname=tudiligenciaya', 'root', '');
+    } catch(PDOException $e){
+        echo "Error:" . $e->getMessage();
+    }
+    
+    $stetaments = $conexion->prepare("INSERT INTO usuarios(nombre,apellido,correo,usuario,cedula,pais,direccion,passuno,passdos) VALUE('$nombre','$apellido', '$correo', '$usuario', '$cedula', '$pais', '$direccion', '$passuno', '$passdos')");
+    $stetaments = $conexion->prepare("SELECT * FROM usuarios WHERE usuario = :usuario LIMIT 1");
+    $stetaments->execute(array(':usuario' => $usuario));
+    $resultado = $stetaments->fetch();
+
+    if ($resultado != false) {
+        $errores .= 'El usuario ya existe';
+    }
+}
 
 require 'registrate.view.php';
 ?>

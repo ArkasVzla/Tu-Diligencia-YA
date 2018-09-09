@@ -45,8 +45,8 @@
             </ul>
             
                 <form class="form-inline">
-	    			<a class="btn btn-outline-secondary mr-2" href="registrate.view.php">Registrate</a>
-                      <a class="btn btn-outline-secondary" href="login.php">Ingresar</a>
+	    			<a class="btn btn-outline-secondary mr-2" href="registrate.php">Registrate</a>
+                    <a class="btn btn-outline-secondary" href="login.php">Ingresar</a>
 	  		    </form>	
             </div>
         </div>    
@@ -70,7 +70,7 @@
                     <div class="card-body">
                         <div class="card-title text-muted text-center"><h4>Crear cuenta</h4></div>
                         
-                            <form action="registrate.php" method="post" name="" id="">
+                            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="login" id="">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
@@ -189,7 +189,7 @@
                                         </div>
                                         
                                         <div class="col-12">
-                                            <input type="submit" name="submit" value="Registrar" class="btn btn-block btn-primary">
+                                            <input type="submit" name="submit" value="Registrar" onclick="login.submit()" class="btn btn-block btn-primary">
                                         </div>
                                     </div>
                                 </div>
