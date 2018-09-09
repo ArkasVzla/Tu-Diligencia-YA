@@ -11,7 +11,7 @@
 </head>
 <body>
 <!-- Menu de Navegacion -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
             <img src="img/logo.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto;" width="200" >
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,7 @@
             
                 <form class="form-inline">
 	    			<a class="btn btn-outline-secondary mr-2" href="registrate.view.php">Registrate</a>
-                      <a class="btn btn-outline-secondary" href="login.php">Ingresar</a>
+                    <a class="btn btn-outline-secondary" href="login.php">Ingresar</a>
 	  		    </form>	
             </div>
         </div>    
@@ -71,7 +71,7 @@
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="material-icons">account_circle</i></div>
                                         </div>
-                                        <input type="text" class="form-control form-control-md" id="usuario" placeholder="Ingresar Usuario">
+                                        <input type="text" name="usuario" class="form-control form-control-md" id="usuario" placeholder="Ingresar Usuario">
                                     </div>
                                 </div>
 
@@ -81,7 +81,7 @@
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="material-icons">lock_open</i></div>
                                         </div>
-                                        <input type="password" class="form-control form-control-md" id="contraseña-uno" placeholder="Contraseña">
+                                        <input type="password" name="passuno" class="form-control form-control-md" id="contrasela-uno" placeholder="Contraseña">
                                     </div>
                                 </div>
                                 <a href="#" class="card-link">Recuperar Usuario</a>

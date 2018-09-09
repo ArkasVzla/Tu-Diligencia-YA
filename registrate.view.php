@@ -70,7 +70,7 @@
                     <div class="card-body">
                         <div class="card-title text-muted text-center"><h4>Crear cuenta</h4></div>
                         
-                            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="login" id="">
+                            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name="login" id="">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12 col-md-6 col-lg-6 mb-3">

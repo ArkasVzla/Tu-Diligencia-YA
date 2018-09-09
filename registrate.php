@@ -1,4 +1,4 @@
-<?php session_start();
+<?php
 
 if(isset($_POST['submit'])) {
     $nombre = $_POST['nombre'];
@@ -134,9 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $direccion = filter_var(strtolower($_POST['direccion']), FILTER_SANITIZE_STRING);
     $telefono = filter_var(strtolower($_POST['telefono']), FILTER_SANITIZE_STRING);
     $passuno = $_POST['passuno'];
-    $passHash = password_hash($passuno, PASSWORD_BCRYPT);
     $passdos = $_POST['passdos'];
-    $passHash = password_hash($passdos, PASSWORD_BCRYPT);
     
     try{
         $conexion = new PDO('mysql:host=localhost;dbname=tudiligenciaya', 'root', '');
@@ -144,12 +142,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Error:" . $e->getMessage();
     }
     
-    $stetaments = $conexion->prepare("INSERT INTO usuarios(nombre,apellido,correo,usuario,cedula,pais,direccion,passuno,passdos) VALUE('$nombre','$apellido', '$correo', '$usuario', '$cedula', '$pais', '$direccion', '$passuno', '$passdos')");
-    $stetaments = $conexion->prepare("SELECT * FROM usuarios WHERE usuario = :usuario LIMIT 1");
-    $stetaments->execute(array(':usuario' => $usuario));
-    $resultado = $stetaments->fetch();
+    $stataments = $conexion->prepare("INSERT INTO usuarios(nombre,apellido,correo,usuario,cedula,pais,direccion,passuno,passdos) VALUE('$nombre','$apellido', '$correo', '$usuario', '$cedula', '$pais', '$direccion', '$passuno', '$passdos')");
+    $stataments = $conexion->prepare("SELECT * FROM usuarios WHERE usuario = :usuario LIMIT 1");
+    $stataments->execute(array(':usuario' => $usuario));
+    $resultados = $stataments->fetch();
 
-    if ($resultado != false) {
+    if ($resultados != false) {
         $errores .= 'El usuario ya existe';
     }
 }

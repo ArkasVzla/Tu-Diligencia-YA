@@ -1,4 +1,10 @@
-<?php
+<?php session_start();
+
+// if (isset($_SESSION['usuario'])) {
+//     header('Location: sesion.php');
+// }else{
+//     header('Location: registrate.php');
+// }
 
 if(isset($_POST['submit'])){
     $nombre = $_POST['nombre'];
