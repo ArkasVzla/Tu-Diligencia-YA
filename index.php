@@ -45,5 +45,5 @@ if(isset($_POST['submit'])){
 
 
 
-require 'index.view.php';
+require 'views/index.view.php';
 ?>

@@ -25,7 +25,7 @@
                     <a class="nav-link" id="v-pills-usuario-tab" data-toggle="pill" href="#v-pills-usuario" role="tab" aria-controls="v-pills-usuario" aria-selected="true" href="#"><i class="material-icons">supervisor_account</i><span>Usuarios</span></a>
                     <a class="nav-link" id="v-pills-usuario-tab" data-toggle="pill" href="#v-pills-servicios" role="tab" aria-controls="v-pills-servicios" aria-selected="true" href="#"><i class="material-icons">room_service</i><span>Servicios</span></a>
                     <a class="nav-link" id="v-pills-configuraciones-tab" data-toggle="pill" href="#v-pills-configuraciones" role="tab" aria-controls="v-pills-configuraciones" aria-selected="true" href="#"><i class="material-icons">settings</i><span>Configuraciones</span></a>
-                    <a href="cerrar.php"><i class="material-icons">exit_to_app</i><span>Salir</span></a>
+                    <a href="login.php?content=cerrar.php"><i class="material-icons">exit_to_app</i><span>Salir</span></a>
                 </nav>
             </div>
             <main class="main col">

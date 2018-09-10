@@ -1,4 +1,4 @@
-<?php session_start();
+<?php
 
 if(isset($_POST['submit'])) {
     $nombre = $_POST['nombre'];
@@ -137,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $passdos = $_POST['passdos'];
     
     try{
-        $conexion = new PDO('mysql:host=localhost;dbname=tudiligenciaya', 'root', '');
+        $conexion = new PDO('mysql:host=localhost;dbname=tu_diligencia_ya', 'root', '');
     } catch(PDOException $e){
         echo "Error:" . $e->getMessage();
     }
@@ -152,6 +152,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-require 'registrate.view.php';
+require 'views/registrate.view.php';
 ?>
     
