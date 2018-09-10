@@ -1,5 +1,5 @@
-<?php
-
+<?php session_start();
+ 
 if(isset($_POST['submit'])) {
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
@@ -138,7 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Error:" . $e->getMessage();
     }
     
-    $statements = $conexion->prepare("INSERT INTO usuarios(nombre,apellido,correo,usuario,cedula,pais,direccion,passuno,passdos) VALUE('$nombre','$apellido', '$correo', '$usuario', '$cedula', '$pais', '$direccion', '$passuno', '$passdos')");
+    $statements = $conexion->prepare("INSERT INTO usuarios (nombre,apellido,correo,usuario,cedula,pais,direccion,passuno,passdos) VALUE('$nombre','$apellido', '$correo', '$usuario', '$cedula', '$pais', '$direccion', '$passuno', '$passdos')");
     $statements->execute(array(':usuario' => $usuario));
     $resultados = $statements->fetch();
 
