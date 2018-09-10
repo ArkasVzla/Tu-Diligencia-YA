@@ -1,9 +1,12 @@
 <?php session_start();
 
+<<<<<<< HEAD
 if(isset($_SESSION['usuario'])){
     header('Location: index.php');
 }
 
+=======
+>>>>>>> 4bd7ad345b8b9ec01bcd5cde89ca7e952540537b
 $errores = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
