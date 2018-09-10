@@ -1,4 +1,4 @@
-<?php session_start();
+<?php
 
 if(isset($_POST['submit'])) {
     $nombre = $_POST['nombre'];
@@ -120,10 +120,6 @@ if(isset($_POST['submit'])) {
 
  // GUARDAR REGISTRO EN LA BASE DE DATOS
 
-if(isset($_SESSION['usuario'])){
-    header('Location: index.php');
-}
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nombre = filter_var(strtolower($_POST['nombre']), FILTER_SANITIZE_STRING);
     $apellido = filter_var(strtolower($_POST['apellido']), FILTER_SANITIZE_STRING);
@@ -137,13 +133,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $passdos = $_POST['passdos'];
     
     try{
-        $conexion = new PDO('mysql:host=localhost;dbname=tudiligenciaya', 'root', '');
+        $conexion = new PDO('mysql:host=localhost;dbname=tu_diligencia_ya', 'root', '');
     } catch(PDOException $e){
         echo "Error:" . $e->getMessage();
     }
     
     $statements = $conexion->prepare("INSERT INTO usuarios(nombre,apellido,correo,usuario,cedula,pais,direccion,passuno,passdos) VALUE('$nombre','$apellido', '$correo', '$usuario', '$cedula', '$pais', '$direccion', '$passuno', '$passdos')");
-    //$statements = $conexion->prepare("SELECT * FROM usuarios WHERE usuario = :usuario LIMIT 1");
     $statements->execute(array(':usuario' => $usuario));
     $resultados = $statements->fetch();
 
@@ -152,6 +147,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-require 'registrate.view.php';
+require 'views/registrate.view.php';
 ?>
     

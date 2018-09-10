@@ -1,7 +1,7 @@
 <?php session_start();
 
-if (isset($_SESSION['usuario'])) {
-    header('Location: login.php');
+if(isset($_SESSION['usuario'])){
+    header('Location: index.php');
 }
 
 $errores = '';
@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $passuno = $_POST['passuno'];
 
     try{
-        $conexion = new PDO('mysql:host=localhost;dbname=tudiligenciaya', 'root', '');
+        $conexion = new PDO('mysql:host=localhost;dbname=tu_diligencia_ya', 'root', '');
     }catch(PDOException $e) {
         echo "Error: . $e->getMessage";
     }
@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $statements->execute(array(':usuario' => $usuario, ':passuno' => $passuno));
 
     $resultado = $statements->fetch();
+
     if ($resultado !== false) {
         $_SESSION['usuario'] = $usuario;
         header('Location: sesion.php');
@@ -32,5 +33,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    
 }
 
-require 'login.view.php';
+require 'views/login.view.php';
 ?>
