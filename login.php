@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $conexion = new PDO('mysql:host=localhost;dbname=tu_diligencia_ya', 'root', '');
     }catch(PDOException $e) {
         echo "Error: . $e->getMessage";
-    }
+    } 
 
     $statements = $conexion->prepare(
         'SELECT * FROM usuarios WHERE usuario = :usuario AND passuno = :passuno'

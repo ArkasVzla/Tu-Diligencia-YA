@@ -59,7 +59,7 @@
                     <img src="img/iniciar.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto; mt-5" width="150">
                 </figure>
             </div>
-
+ 
             <div class="col-sm-12-col-md-12 col-lg-12 mt-3 d-flex justify-content-center">
                 <div class="card" style="width: 400px;">
                     <h5 class="card-header">Iniciar Sesion</h5>

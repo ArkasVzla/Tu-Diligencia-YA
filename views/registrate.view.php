@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body>
+<body> 
     			<!-- Menu de Navegacion -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">

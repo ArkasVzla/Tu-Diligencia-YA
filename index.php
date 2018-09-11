@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
         $nombre = stripcslashes($nombre);
     }else{
         $errores .= 'Por favor ingresa un nombre <br />';
-    }
+    } 
 
     if(!empty($correo)){
         $correo = filter_var($correo, FILTER_SANITIZE_EMAIL);

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body>
+<body> 
     <div class="container-fluid">
         <div class="row">
                        <!-- BARRA DE MENU  -->
