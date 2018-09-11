@@ -1,4 +1,9 @@
 <?php session_start();
 
-require 'sesion.view.php';
+if(isset($_SESSION['usuario'])){
+    require 'views/sesion.view.php';
+}else {
+    header('Location: login.php');
+}
+
 ?>

@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 
 if(isset($_POST['submit'])){
     $nombre = $_POST['nombre'];
@@ -45,5 +45,5 @@ if(isset($_POST['submit'])){
 
 
 
-require 'index.view.php';
+require 'views/index.view.php';
 ?>
