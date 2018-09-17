@@ -13,6 +13,7 @@ if(isset($_POST['submit'])) {
     $passdos = $_POST['passdos'];
     $errores = '';
     $enviado = '';
+
         
     if(!empty($nombre)){
         $nombre = filter_var($nombre, FILTER_SANITIZE_STRING);
@@ -138,13 +139,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Error:" . $e->getMessage();
     }
     
-    $statements = $conexion->prepare("INSERT INTO usuarios (nombre,apellido,correo,usuario,cedula,pais,direccion,passuno,passdos) VALUE('$nombre','$apellido', '$correo', '$usuario', '$cedula', '$pais', '$direccion', '$passuno', '$passdos')");
+    $statements = $conexion->prepare("INSERT INTO usuarios (nombre,apellido,correo,usuario,cedula,pais,direccion,telefono,passuno,passdos) VALUE('$nombre','$apellido', '$correo', '$usuario', '$cedula', '$pais', '$direccion', $telefono, '$passuno', '$passdos')");
     $statements->execute(array(':usuario' => $usuario));
     $resultados = $statements->fetch();
 
-    if ($resultados != false) {
+
+    if ($resultados != false) { 
         $errores .= 'El usuario ya existe';
     }
+ 
+
 }
 
 require 'views/registrate.view.php';
