@@ -138,69 +138,50 @@
                                 <h3 class="titulo">Servicios</h3>
                                 <form action="#">
                                     <div class="row">   
-                                        <div class="col-sm-12 col-md-6 col-lg-6">
-                                            <div class="card text-center border-dark mb-2">
-                                                <div class="card-header">
-                                                    Servicio #1
+                                        <div class="col-sm-12 col-md-12 col-lg-12">
+                                            <div class="card text-center mb-2">
+                                                <div class="card-header bg-primary"> 
+                                                  <!-- ingresar texto -->
                                                 </div>
                                                 <div class="card-body">
-                                                    <p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dicta tempora dolores blanditiis, vitae totam eaque maiores ipsum.</p>
-                                                    <button class="btn btn-outline-primary btn-sm" type="submit">Solicitar Servicio</button>
-                                                </div>  
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-6">
-                                            <div class="card text-center border-dark mb-2">
-                                                <div class="card-header">
-                                                    Servicio #1
-                                                </div>
-                                                <div class="card-body">
-                                                    <p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dicta tempora dolores blanditiis, vitae totam eaque maiores ipsum.</p>
-                                                    <button class="btn btn-outline-primary btn-sm" type="submit">Solicitar Servicio</button>
-                                                </div>  
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-6">
-                                            <div class="card text-center border-dark mb-2">
-                                                <div class="card-header">
-                                                    Servicio #1
-                                                </div>
-                                                <div class="card-body">
-                                                    <p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dicta tempora dolores blanditiis, vitae totam eaque maiores ipsum.</p>
-                                                    <button class="btn btn-outline-primary btn-sm" type="submit">Solicitar Servicio</button>
-                                                </div>  
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-6">
-                                            <div class="card text-center border-dark mb-2">
-                                                <div class="card-header">
-                                                    Servicio #1
-                                                </div>
-                                                <div class="card-body">
-                                                    <p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dicta tempora dolores blanditiis, vitae totam eaque maiores ipsum.</p>
-                                                    <button class="btn btn-outline-primary btn-sm" type="submit">Solicitar Servicio</button>
-                                                </div>  
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-6">
-                                            <div class="card text-center border-dark mb-2">
-                                                <div class="card-header">
-                                                    Servicio #1
-                                                </div>
-                                                <div class="card-body">
-                                                    <p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dicta tempora dolores blanditiis, vitae totam eaque maiores ipsum.</p>
-                                                    <button class="btn btn-outline-primary btn-sm" type="submit">Solicitar Servicio</button>
-                                                </div>  
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-6">
-                                            <div class="card text-center border-dark mb-2">
-                                                <div class="card-header">
-                                                    Servicio #1
-                                                </div>
-                                                <div class="card-body">
-                                                    <p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dicta tempora dolores blanditiis, vitae totam eaque maiores ipsum.</p>
-                                                    <button class="btn btn-outline-primary btn-sm" type="submit">Solicitar Servicio</button>
+                                                    <select class="custom-select">
+                                                        <option selected>Seleccionar Servicios</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                        <!-- ingresar imagen -->
+                                                    <div class="custom-file mt-2">
+                                                        <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+                                                        <label class="custom-file-label" for="customFileLang">Adjuntar Archivo</label>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-sm-12 col-md-6 col-lg-6 mt-3">
+                                                            <label class="sr-only" for="email">Correo</label>
+                                                            <div class="input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <div class="input-group-text"><i class="material-icons">email</i></div>
+                                                                </div>
+                                                                <input type="email" class="form-control form-control-md" name="asunto" id="email" placeholder="Ingresar Correo">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-12 col-md-6 col-lg-6 mt-3">
+                                                            <label class="sr-only" for="asunto">Asunto</label>
+                                                            <div class="input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <div class="input-group-text"><i class="material-icons">face</i></div>
+                                                                </div>
+                                                                <input type="text" class="form-control form-control-md" name="asunto" id="asunto" placeholder="Ingresar Asunto">
+                                                            </div>
+                                                        </div>  
+                                                    </div>
+
+                                                    <div class="form-group mt-3">
+                                                        <label for="mensaje">Mensaje</label>
+                                                        <textarea class="form-control textareaservicios" name="mensaje" id="mensaje" rows="3">hola</textarea>
+                                                    </div>
                                                 </div>  
                                             </div>
                                         </div>

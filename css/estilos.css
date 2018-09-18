@@ -76,55 +76,19 @@ body {
 	margin-bottom: 40px;
 }
 
-/* --- ---- WIDGET NUEVA ENTRADA --- ----  */
-/* .main .widget form input[type="text"],
-.main .widget form textarea {
-	width: 100%;
-	padding: 10px;
-	margin-bottom: 20px;
-	font-family: 'Open Sans', sans-serif;
-	border: none;
-	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
-}
-
-.main .widget form input[type="text"] {
-	font-weight: 400;
-} */
-
-.main .widget form textarea {
-	width: 100%;
-	margin-top: 5px;
-	height: 400px;
-	min-height: 200px;
-	max-height: 400px;
-	
-}
-
 .textarea {
 	width: 100%;
 	height: 200px;
 	min-height: 200px;
-	max-height: 300px;
+	max-height: 200px;
 }
 
-/* .main .widget form button {
-	background: #0275d8;
-	cursor: pointer;
-	color: #fff;
-	font-family: 'Roboto', sans-serif;
-	font-size: 18px;
-	font-weight: 500;
-	border: none;
-	display: inline-block;
-	padding: 10px;
-	width: 200px;
-	border-radius: 3px;
-	transition: all .3s ease;
+.textareaservicios {
+	width: 100%;
+	height: 200px;
+	min-height: 200px;
+	max-height: 200px;
 }
-
-.main .widget form button:hover {
-	background: #025aa5;
-} */
 
 /* --- ---- WIDGET ESTADISTICAS --- ----  */
 .main .estadisticas .contenedor {
