@@ -57,7 +57,7 @@
             <div class="carousel-item active">
                 <img class="d-block w-100" src="img/slider3.jpeg" alt="responsive-image" height="700">
                 <div class="carousel-caption d-none d-md-block">
-                    <h3 class="text-primary display-4">¿Estas fuerta de venezuela y no puedes como tramitar tus documentos?</h3>
+                    <h3 class="text-primary">¿Estas fuerta de venezuela y no puedes como tramitar tus documentos?</h3>
                     <hr class="border border-warning">
                     <a href="registrate.php" class="btn btn-lg btn-outline-primary"> Registrate</a>
                 </div>
