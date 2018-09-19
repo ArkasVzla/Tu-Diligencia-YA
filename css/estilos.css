@@ -76,19 +76,13 @@ body {
 	margin-bottom: 40px;
 }
 
-.textarea {
+textarea {
 	width: 100%;
 	height: 200px;
 	min-height: 200px;
 	max-height: 200px;
 }
 
-.textareaservicios {
-	width: 100%;
-	height: 200px;
-	min-height: 200px;
-	max-height: 200px;
-}
 
 /* --- ---- WIDGET ESTADISTICAS --- ----  */
 .main .estadisticas .contenedor {

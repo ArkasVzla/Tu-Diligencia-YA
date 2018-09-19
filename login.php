@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $passuno = $_POST['passuno'];
 
     try{
-        $conexion = new PDO('mysql:host=localhost;dbname=tu_diligencia_ya', 'root', '');
+        $conexion = new PDO('mysql:host=localhost;dbname=tudiligenciaya', 'root', '');
     }catch(PDOException $e) {
         echo "Error: . $e->getMessage";
     } 
