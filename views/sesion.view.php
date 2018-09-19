@@ -55,11 +55,7 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione vitae totam eaque maiores ipsum. Odio dicta tempora </p>
-                                                    <div class="custom-file mb-2">
-                                                        <input type="file" class="custom-file-input" id="customFileLang" lang="es">
-                                                        <label class="custom-file-label" for="customFileLang">Adjuntar</label>
-                                                    </div>
-                                                    <button class="btn btn-outline-success btn-sm" type="submit" value="Enviar">Enviar</button>
+                                                    <button class="btn btn-outline-success btn-sm disabled" type="submit" value="Enviar">En Espera</button>
                                                     <button class="btn btn-outline-danger btn-sm" type="submit" value="Eliminar">Eliminar</button>
                                                 </div>
                                             </div>
@@ -71,11 +67,7 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dicta tempora dolores blanditiis, vitae totam eaque maiores ipsum.</p>
-                                                    <div class="custom-file mb-2">
-                                                        <input type="file" class="custom-file-input" id="customFileLang" lang="es">
-                                                        <label class="custom-file-label" for="customFileLang">Adjuntar</label>
-                                                     </div>
-                                                    <button class="btn btn-outline-success btn-sm" type="submit" value="Enviar">Enviar</button>
+                                                    <button class="btn btn-outline-success btn-sm disabled" type="submit" value="Enviar">En espera</button>
                                                     <button class="btn btn-outline-danger btn-sm" type="submit" value="Eliminar">Eliminar</button>
                                                 </div>  
                                             </div>
@@ -88,11 +80,7 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dicta tempora dolores blanditiis, vitae totam eaque maiores ipsum.</p>
-                                                    <div class="custom-file mb-2">
-                                                        <input type="file" class="custom-file-input" id="customFileLang" lang="es">
-                                                        <label class="custom-file-label" for="customFileLang">Adjuntar</label>
-                                                    </div>
-                                                    <button class="btn btn-outline-success btn-sm" type="submit" value="Enviar">Enviar</button>
+                                                    <button class="btn btn-outline-success btn-sm disabled" type="submit" value="Enviar">en Espera</button>
                                                     <button class="btn btn-outline-danger btn-sm" type="submit" value="Eliminar">Eliminar</button>
                                                 </div>  
                                             </div>
@@ -146,9 +134,12 @@
                                                 <div class="card-body">
                                                     <select class="custom-select">
                                                         <option selected>Seleccionar Servicios</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
+                                                        <option value="1">Apostilla de Documentos</option>
+                                                        <option value="2">Antecedentes penales</option>
+                                                        <option value="3">Tramites Civiles</option>
+                                                        <option value="4">Tramites Bancarios</option>
+                                                        <option value="5">Gestiones Gubernamentales</option>
+                                                        <option value="6">Pago de deudas de servicios publicos</option>
                                                     </select>
                                                         <!-- ingresar imagen -->
                                                     <div class="custom-file mt-2">
@@ -180,7 +171,7 @@
 
                                                     <div class="form-group mt-3">
                                                         <label for="mensaje">Mensaje</label>
-                                                        <textarea class="form-control textareaservicios" name="mensaje" id="mensaje" rows="3">hola</textarea>
+                                                        <textarea class="form-control textareaservicios" name="mensaje" id="mensaje" rows="3" placeholder="Escriba una descripcion del servicio que requiere" style="max-height: 300px; min-height: 300px;"></textarea>
                                                     </div>
                                                 </div>  
                                             </div>
