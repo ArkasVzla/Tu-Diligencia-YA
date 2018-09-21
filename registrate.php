@@ -133,12 +133,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $passuno = $_POST['passuno'];
     $passdos = $_POST['passdos'];
     
+    // conexion a la base de datos
     try{
         $conexion = new PDO('mysql:host=localhost;dbname=tudiligenciaya', 'root', '');
     } catch(PDOException $e){
         echo "Error:" . $e->getMessage();
     }
-    
+    // insertando datos a la base de datos
     $statements = $conexion->prepare("INSERT INTO usuarios (nombre,apellido,correo,usuario,cedula,pais,direccion,telefono,passuno,passdos) VALUE('$nombre','$apellido', '$correo', '$usuario', '$cedula', '$pais', '$direccion', $telefono, '$passuno', '$passdos')");
     $statements->execute(array(':usuario' => $usuario));
     $resultados = $statements->fetch();

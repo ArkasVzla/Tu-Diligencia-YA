@@ -6,15 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Nuevo index</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/animate.min.css">
+    <link rel="stylesheet" href="./css/estilos.css">
 </head>
 <body>
 
     <!-- menu de navegacion -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
+    <nav class="header header-fondo navbar navbar-expand-lg fixed-top navbar-light bg-white shadow-lg p-3 mb-5 bg-white rounded">
         <div class="container">
-            <img src="img/logo.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto;" width="200" >
+            <img src="img/logo.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto;" width="150" >
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -55,7 +56,7 @@
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="img/slider3.jpeg" alt="responsive-image" height="700">
+                <img class="d-block w-100" src="img/slider3.jpeg" alt="responsive-image" height="700" style="">
                 <div class="carousel-caption d-none d-md-block">
                     <h3 class="text-primary">¿Estas fuerta de venezuela y no puedes como tramitar tus documentos?</h3>
                     <hr class="border border-warning">
@@ -334,8 +335,10 @@
             interval: 15000
         })
     </script>
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/sitio.js"></script>
     
     
 </body>

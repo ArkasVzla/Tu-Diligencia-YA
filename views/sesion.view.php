@@ -132,7 +132,7 @@
                                                   <!-- ingresar texto -->
                                                 </div>
                                                 <div class="card-body">
-                                                    <select class="custom-select">
+                                                    <select name="adjuntar" class="custom-select">
                                                         <option selected>Seleccionar Servicios</option>
                                                         <option value="1">Apostilla de Documentos</option>
                                                         <option value="2">Antecedentes penales</option>
@@ -146,7 +146,7 @@
                                                         <input type="file" class="custom-file-input" id="customFileLang" lang="es">
                                                         <label class="custom-file-label" for="customFileLang">Adjuntar Archivo</label>
                                                     </div>
-
+                                                            <!-- ingresar correo electronico -->
                                                     <div class="row">
                                                         <div class="col-sm-12 col-md-6 col-lg-6 mt-3">
                                                             <label class="sr-only" for="email">Correo</label>
@@ -157,7 +157,7 @@
                                                                 <input type="email" class="form-control form-control-md" name="asunto" id="email" placeholder="Ingresar Correo">
                                                             </div>
                                                         </div>
-
+                                                                <!-- ingresar asunto -->
                                                         <div class="col-sm-12 col-md-6 col-lg-6 mt-3">
                                                             <label class="sr-only" for="asunto">Asunto</label>
                                                             <div class="input-group">
@@ -168,10 +168,11 @@
                                                             </div>
                                                         </div>  
                                                     </div>
-
+                                                                    <!-- ingresar mensaje -->
                                                     <div class="form-group mt-3">
                                                         <label for="mensaje">Mensaje</label>
                                                         <textarea class="form-control textareaservicios" name="mensaje" id="mensaje" rows="3" placeholder="Escriba una descripcion del servicio que requiere" style="max-height: 300px; min-height: 300px;"></textarea>
+                                                        <input type="button" name="solicitar" id="solicitar" value="Solicitar" class="btn btn-outline-primary btn-md btn-block text-center mt-2">
                                                     </div>
                                                 </div>  
                                             </div>
@@ -268,7 +269,7 @@
                                                         </div>  
                                                 </div>
                                             </div>
-
+                                            
                                             <!-- Cambiar Contraseña -->
                                             <div class="card mt-3">
                                                 <div class="card-body">

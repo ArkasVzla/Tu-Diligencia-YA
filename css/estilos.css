@@ -7,6 +7,17 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
+/* Animacion del nav */
+
+.header{
+	transition: all 2s ease;
+	padding: 2rem 0;
+}
+
+.header .header-fondo {
+	background: #0275db;
+	padding: 1rem 0;
+}
 
 /* --- ---- BARRA LATERAL --- ----  */
 
