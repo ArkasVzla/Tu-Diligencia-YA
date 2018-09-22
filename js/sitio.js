@@ -4,7 +4,7 @@ $(window).scroll(function () {
 
     if (scroll >= 100){
         nav.addClass("fondo");
-    }else{
+    } else {
         nav.removeClass("fondo");
     }
 });

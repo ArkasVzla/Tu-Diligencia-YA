@@ -9,12 +9,11 @@ body {
 
 .header {
 	transition: all 2s ease;
-	padding: .5rem 0;
-	
+	padding: .5rem 0;	
 }
 
 .header.fondo {
-	background: #cacaca;
+	background: #0275db !important;
 	padding: 1rem 0;	
 }
 
