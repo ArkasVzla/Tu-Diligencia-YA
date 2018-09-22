@@ -1,10 +1,7 @@
-$(window).scroll(function () {
-    var nav = $('.header');
-    var scroll = $(window).scrollTop();
-
-    if (scroll >= 100){
-        nav.addClass("fondo");
+$(window).scroll(function() {
+    if ($(document).scrollTop() >= 100) {
+      $('.encabezado').addClass('fondo');
     } else {
-        nav.removeClass("fondo");
+      $('.encabezado').removeClass('fondo');
     }
-});
+  });

@@ -13,7 +13,7 @@
 <body>
 
     <!-- menu de navegacion -->
-    <nav class="header fondo navbar navbar-expand-lg fixed-top navbar-light bg-white">
+    <nav class="encabezado navbar navbar-expand-lg fixed-top navbar-dark bg-dark" id="encabezado">  
         <div class="container">
             <img src="img/logo.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto;" width="150" >
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,11 +45,11 @@
             </ul>
             
                 <form class="form-inline">
-	    			<a class="btn btn-outline-secondary mr-2" href="registrate.php">Registrate</a>
-                    <a class="btn btn-outline-secondary" href="login.php">Ingresar</a>
+	    			<a class="btn btn-outline-light mr-2" href="registrate.php">Registrate</a>
+                    <a class="btn btn-outline-light" href="login.php">Ingresar</a>
 	  		    </form>	
             </div>
-        </div>    
+        </div>   
     </nav>
 
     <!-- Menu de slider -->
@@ -339,7 +339,7 @@
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
-    <script src="js/sitio.js"></script>
+    <script type="text/javascript" src="js/sitio.js"></script>
     
     
 </body>

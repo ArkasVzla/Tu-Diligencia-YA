@@ -1,21 +1,22 @@
 
 body {
 	background: #f2f2f2;
-	font-size: 16px;
 	font-family: 'Open Sans', sans-serif;
 }
 
 /* Animacion del nav */
 
-.header {
+.encabezado {
+	background: #fff;
 	transition: all 2s ease;
-	padding: .5rem 0;	
+	padding: .5rem;	
 }
 
-.header.fondo {
-	background: #0275db !important;
-	padding: 1rem 0;	
+.fondo {
+	background: #c4c3c3 !important;
+	padding: 1rem;	
 }
+
 
 /* --- ---- BARRA LATERAL --- ----  */
 
