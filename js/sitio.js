@@ -3,8 +3,8 @@ $(window).scroll(function () {
     var scroll = $(window).scrollTop();
 
     if (scroll >= 100){
-        nav.addClass("header-fondo");
+        nav.addClass("fondo");
     }else{
-        nav.removeClass("header-fondo");
+        nav.removeClass("fondo");
     }
 });

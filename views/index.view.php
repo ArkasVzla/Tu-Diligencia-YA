@@ -13,7 +13,7 @@
 <body>
 
     <!-- menu de navegacion -->
-    <nav class="header header-fondo navbar navbar-expand-lg fixed-top navbar-light bg-white shadow-lg p-3 mb-5 bg-white rounded">
+    <nav class="header fondo navbar navbar-expand-lg fixed-top navbar-light bg-white shadow-lg">
         <div class="container">
             <img src="img/logo.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto;" width="150" >
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
