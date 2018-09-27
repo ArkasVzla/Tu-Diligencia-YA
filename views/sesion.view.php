@@ -90,36 +90,14 @@
                             </div>
                             <!-- ///SECCION VISTA DE LOS USUARIOS -->
                             <div class="tab-pane fade" id="v-pills-usuario" role="tabpanel" aria-labelledby="v-pills-usuario-tab">
-                                <h3 class="titulo">Usuarios</h3>
-                                <form action="#">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-6 col-lg-6">
-                                            <div class="card border-dark mb-2">
-                                                <div class="card-header">
-                                                    Usuario #1
-                                                </div>
-                                                <div class="card-body">
-                                                    <p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dicta tempora dolores blanditiis, vitae totam eaque maiores ipsum.</p>
-                                                    <button class="btn btn-outline-primary btn-sm" type="submit" value="Editar">Editar</button>
-                                                    <button class="btn btn-outline-danger btn-sm" type="submit" value="Eliminar">Eliminar</button>
-                                                </div>  
-                                            </div>
-                                        </div>
+                                <h3 class="titulo mb-3">Usuarios</h3>
 
-                                        <div class="col-sm-12 col-md-6 col-lg-6">
-                                            <div class="card border-dark mb-2">
-                                                <div class="card-header">
-                                                    Usuario #2
-                                                </div>
-                                                <div class="card-body">
-                                                    <p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dicta tempora dolores blanditiis, vitae totam eaque maiores ipsum.</p>
-                                                    <button class="btn btn-outline-primary btn-sm" type="submit" value="Editar">Editar</button>
-                                                    <button class="btn btn-outline-danger btn-sm" type="submit" value="Eliminar">Eliminar</button>
-                                                </div>  
-                                            </div>
-                                        </div>
-                                    </div> 
-                                </form>
+                                <?php foreach ($fotos as $foto): ?>
+                                    <a href="sesion.php?id=<?php echo $fotos['id']; ?>">
+                                        <img src="archivos/<?php echo $fotos['archivo']; ?>" alt="">
+                                    </a>
+                                <?php endforeach; ?>
+
                             </div>
                             <!-- ///SECCION SELECCIONAR SERVICIOS -->
                             <div class="tab-pane fade" id="v-pills-servicios" role="tabpanel" aria-labelledby="v-pills-servicios-tab">
@@ -167,13 +145,13 @@
                                                                 <!-- ingresar asunto -->
                                                         <div class="col-sm-12 col-md-6 col-lg-6 mt-3">
                                                             <div class="was-validated">
-                                                                <label class="sr-only" for="asunto">Asunto</label>
+                                                                <label class="sr-only" for="telefono">Telefono</label>
                                                                 <div class="input-group">
                                                                     <div class="input-group-prepend">
                                                                         <div class="input-group-text"><i class="material-icons">face</i></div>
                                                                     </div>
-                                                                    <input type="text" class="form-control form-control-md" name="asunto" id="asunto" placeholder="Ingresar Asunto" required>
-                                                                    <div class="invalid-feedback text-left">Ingresar Asunto</div>
+                                                                    <input type="text" class="form-control form-control-md" name="telefono" id="telefono" placeholder="Ingresar Telefono" required>
+                                                                    <div class="invalid-feedback text-left">Ingresar Telefono</div>
                                                                 </div>
                                                             </div>
                                                         </div>  
