@@ -93,7 +93,7 @@
                                 <h3 class="titulo mb-3">Usuarios</h3>
 
                                 <?php foreach ($fotos as $foto): ?>
-                                    <a href="sesion.php?id=<?php echo $fotos['id']; ?>">
+                                    <a href="views/sesion.view.php?id=<?php echo $fotos['id']; ?>">
                                         <img src="archivos/<?php echo $fotos['archivo']; ?>" alt="">
                                     </a>
                                 <?php endforeach; ?>
@@ -142,15 +142,15 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                                <!-- ingresar asunto -->
+                                                                <!-- ingresar telefono -->
                                                         <div class="col-sm-12 col-md-6 col-lg-6 mt-3">
                                                             <div class="was-validated">
-                                                                <label class="sr-only" for="telefono">Telefono</label>
+                                                                <label class="sr-only" for="numero_telefono">Telefono</label>
                                                                 <div class="input-group">
                                                                     <div class="input-group-prepend">
                                                                         <div class="input-group-text"><i class="material-icons">face</i></div>
                                                                     </div>
-                                                                    <input type="text" class="form-control form-control-md" name="telefono" id="telefono" placeholder="Ingresar Telefono" required>
+                                                                    <input type="text" class="form-control form-control-md" name="numero_telefono" id="numero_telefono" placeholder="Ingresar Telefono" required>
                                                                     <div class="invalid-feedback text-left">Ingresar Telefono</div>
                                                                 </div>
                                                             </div>

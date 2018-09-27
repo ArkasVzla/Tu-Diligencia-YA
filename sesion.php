@@ -5,7 +5,7 @@ if(isset($_SESSION['usuario'])){
 }else {
     header('Location: login.php');
 }
- 
+
 $errores = '';
 $enviado = '';
 
@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
     $servicio = $_POST['servicio'];
     $archivo = $_POST['archivo'];
     $correo = $_POST['correo'];
-    $asunto = $_POST['asunto'];
+    $numero_telefono = $_POST['numero_telefono'];
     $mensaje = $_POST['mensaje']; 
 
     if(!empty($servicio)){
@@ -41,11 +41,11 @@ if (isset($_POST['submit'])) {
         $errores .= 'Ingrese los datos correctamente';
     }
 
-    if (!empty($asunto)){
-        $asunto = filter_var($asunto, FILTER_SANITIZE_STRING);
-        $asunto = trim($archivo);
-        $asunto = htmlspecialchars($asunto);
-        $asunto = stripcslashes($asunto);
+    if (!empty($numero_telefono)){
+        $numero_telefono = filter_var($numero_telefono, FILTER_SANITIZE_STRING);
+        $numero_telefono = trim($numero_telefono);
+        $numero_telefono = htmlspecialchars($numero_telefono);
+        $numero_telefono = stripcslashes($numero_telefono);
     } else {
         $errores .= 'Ingrese los datos correctamente';
     }
@@ -67,7 +67,6 @@ if (isset($_POST['submit'])) {
 // Conexion a la base de datos
 try{
     $conexion = new PDO('mysql:host=localhost;dbname=tudiligenciaya', 'root', '');
-    return $conexion;
 } catch(PDOException $e){
     echo "Error:" . $e->getMessage();
 }
@@ -86,15 +85,15 @@ if ($_SERVER['REQUEST_METHOD']  == 'POST' && !empty($_FILES)) {
         move_uploaded_file($_FILES['archivo']['tmp_name'], $archivo_subido);
 
         $statement = $conexion->prepare('
-            INSERT INTO servicios (servicio, archivo, correo, telefono, mensaje) 
-            VALUES (:servicio, :archivo, :correo, :telefono, :mensaje)
+            INSERT INTO servicios (servicio, archivo, correo, numero_telefono, mensaje) 
+            VALUES (:servicio, :archivo, :correo, :numero_telefono, :mensaje)
         ');
         
         $statement->execute(array(
             ':servicio' => $_POST['servicio'],
             ':archivo' => $_FILES['archivo']['name'],
             ':correo' => $_POST['correo'],
-            ':telefono' => $_POST['telefono'],
+            ':telefono' => $_POST['numero_telefono'],
             ':mensaje' => $_POST['mensaje']
         ));
 
@@ -116,7 +115,7 @@ $statement->execute();
 $fotos = $statement->fetchAll();
 
 if (!$fotos) {
-    header('Location: sesion.php');
+    $errores .= ' no hay ninguna foto';
 }
 
 print_r($fotos);
@@ -126,5 +125,4 @@ $statement->execute();
 $total_post = $statement->fetch()['total_filas'];
 
 $total_paginas = ceil($total_post / $fotos_por_pagina);
-
 ?>
