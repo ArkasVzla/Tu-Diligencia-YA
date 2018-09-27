@@ -124,7 +124,7 @@
                             <!-- ///SECCION SELECCIONAR SERVICIOS -->
                             <div class="tab-pane fade" id="v-pills-servicios" role="tabpanel" aria-labelledby="v-pills-servicios-tab">
                                 <h3 class="titulo">Servicios</h3>
-                                <form action="#">
+                                <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                                     <div class="row">   
                                         <div class="col-sm-12 col-md-12 col-lg-12">
                                             <div class="card text-center mb-2">
@@ -132,47 +132,63 @@
                                                   <!-- ingresar texto -->
                                                 </div>
                                                 <div class="card-body">
-                                                    <select name="adjuntar" class="custom-select">
-                                                        <option selected>Seleccionar Servicios</option>
-                                                        <option value="1">Apostilla de Documentos</option>
-                                                        <option value="2">Antecedentes penales</option>
-                                                        <option value="3">Tramites Civiles</option>
-                                                        <option value="4">Tramites Bancarios</option>
-                                                        <option value="5">Gestiones Gubernamentales</option>
-                                                        <option value="6">Pago de deudas de servicios publicos</option>
-                                                    </select>
-                                                        <!-- ingresar imagen -->
-                                                    <div class="custom-file mt-2">
-                                                        <input type="file" class="custom-file-input" id="customFileLang" lang="es">
-                                                        <label class="custom-file-label" for="customFileLang">Adjuntar Archivo</label>
+                                                    <div class="was-validated">
+                                                        <select name="servicio" id="servicios" class="custom-select" required>
+                                                            <option value="">Seleccionar Servicios</option>
+                                                            <option value="Apostilla de Documentos">Apostilla de Documentos</option>
+                                                            <option value="Antecedentes penales">Antecedentes penales</option>
+                                                            <option value="Tramites Civiles">Tramites Civiles</option>
+                                                            <option value="Tramites Bancarios">Tramites Bancarios</option>
+                                                            <option value="Gestiones Gubernamentales">Gestiones Gubernamentales</option>
+                                                            <option value="Pago de deudas de servicios publicos">Pago de deudas de servicios publicos</option>
+                                                        </select>
+                                                        <div class="invalid-feedback text-left">Selecciona un servicio</div>
+                                                            <!-- ingresar imagen -->
+                                                        <div class="custom-file mt-2">
+                                                            <input type="file" name="archivo" class="custom-file-input" id="archivo" lang="es" required>
+                                                            <label class="custom-file-label" for="customFileLang">Adjuntar Archivo</label>
+                                                            <div class="invalid-feedback text-left">Adjunta un archivo</div>
+                                                        </div>
                                                     </div>
                                                             <!-- ingresar correo electronico -->
                                                     <div class="row">
                                                         <div class="col-sm-12 col-md-6 col-lg-6 mt-3">
-                                                            <label class="sr-only" for="email">Correo</label>
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text"><i class="material-icons">email</i></div>
+                                                            <div class="was-validated">
+                                                                <label class="sr-only" for="email">Correo</label>
+                                                                <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <div class="input-group-text"><i class="material-icons">email</i></div>
+                                                                    </div>
+                                                                    <input type="email" class="form-control form-control-md" name="correo" id="correo" placeholder="Ingresar Correo" required>
+                                                                    <div class="invalid-feedback text-left">Ingresa un correo</div>
                                                                 </div>
-                                                                <input type="email" class="form-control form-control-md" name="asunto" id="email" placeholder="Ingresar Correo">
                                                             </div>
                                                         </div>
                                                                 <!-- ingresar asunto -->
                                                         <div class="col-sm-12 col-md-6 col-lg-6 mt-3">
-                                                            <label class="sr-only" for="asunto">Asunto</label>
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text"><i class="material-icons">face</i></div>
+                                                            <div class="was-validated">
+                                                                <label class="sr-only" for="asunto">Asunto</label>
+                                                                <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <div class="input-group-text"><i class="material-icons">face</i></div>
+                                                                    </div>
+                                                                    <input type="text" class="form-control form-control-md" name="asunto" id="asunto" placeholder="Ingresar Asunto" required>
+                                                                    <div class="invalid-feedback text-left">Ingresar Asunto</div>
                                                                 </div>
-                                                                <input type="text" class="form-control form-control-md" name="asunto" id="asunto" placeholder="Ingresar Asunto">
                                                             </div>
                                                         </div>  
                                                     </div>
                                                                     <!-- ingresar mensaje -->
                                                     <div class="form-group mt-3">
-                                                        <label for="mensaje">Mensaje</label>
-                                                        <textarea class="form-control textareaservicios" name="mensaje" id="mensaje" rows="3" placeholder="Escriba una descripcion del servicio que requiere" style="max-height: 300px; min-height: 300px;"></textarea>
-                                                        <input type="button" name="solicitar" id="solicitar" value="Solicitar" class="btn btn-outline-primary btn-md btn-block text-center mt-2">
+                                                        <div class="was-validated">
+                                                            <label for="mensaje">Mensaje</label>
+                                                            <textarea class="form-control textareaservicios" name="mensaje" id="mensaje" rows="3" placeholder="Escriba una descripcion del servicio que requiere" style="max-height: 300px; min-height: 300px;" required></textarea>
+                                                            <div class="invalid-feedback text-left">Ingresar mensaje</div>
+                                                        </div>
+                                                        <input type="submit" name="solicitar" id="solicitar" value="Solicitar" class="btn btn-outline-primary btn-md btn-block text-center mt-2">
+                                                        <?php if (isset($error)): ?>
+                                                            <p class="error"> <?php echo $error; ?></p>
+                                                        <?php endif ?>
                                                     </div>
                                                 </div>  
                                             </div>

@@ -13,9 +13,10 @@
 <body>
 
     <!-- menu de navegacion -->
-    <nav class="encabezado navbar navbar-expand-lg fixed-top navbar-dark bg-dark" id="encabezado">  
+    <nav class="encabezado navbar navbar-expand-lg fixed-top navbar-dark bg-dark shadow-lg mb-5 rounded" id="encabezado">  
         <div class="container">
-            <img src="img/logo.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto;" width="150" >
+            <!-- <img src="img/logo.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto;" width="150" > -->
+            <a class="navbar-brand" href="#">Tu Diligencia Ya</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -209,7 +210,7 @@
         </div>
     </div>
     <!-- Seccion contactenos -->
-    <div class="jumbotron junbotron-fluid bg-dark mt-5">
+    <div class="jumbotron junbotron-fluid bg-info mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-6 col-lg-6 align-items-center">

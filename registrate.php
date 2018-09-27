@@ -140,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Error:" . $e->getMessage();
     }
     // insertando datos a la base de datos
-    $statements = $conexion->prepare("INSERT INTO usuarios (nombre,apellido,correo,usuario,cedula,pais,direccion,telefono,passuno,passdos) VALUE('$nombre','$apellido', '$correo', '$usuario', '$cedula', '$pais', '$direccion', $telefono, '$passuno', '$passdos')");
+    $statements = $conexion->prepare("INSERT INTO usuarios (nombre,apellido,correo,usuario,cedula,pais,direccion,telefono,passuno,passdos) VALUE('$nombre','$apellido', '$correo', '$usuario', '$cedula', '$pais', '$direccion', '$telefono', '$passuno', '$passdos')");
     $statements->execute(array(':usuario' => $usuario));
     $resultados = $statements->fetch();
 

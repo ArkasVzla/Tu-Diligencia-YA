@@ -1,6 +1,6 @@
-
+/* 
 body {
-	background: #f2f2f2;
+	background: #e40303;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -8,12 +8,27 @@ body {
 
 .encabezado {
 	background: #fff;
-	transition: all 2s ease;
+	transition: all 1s ease;
 	padding: .5rem;	
 }
 
 .fondo {
-	background: #c4c3c3 !important;
+	background: #b4b4b4 !important;
+	padding: 1rem;	
+}
+
+.fondo1 {
+	background: #2d8d10 !important;
+	padding: 1rem;	
+}
+
+.fondo2 {
+	background: #3168ff !important;
+	padding: 1rem;	
+}
+
+.fondo3 {
+	background: #28b3d6 !important;
 	padding: 1rem;	
 }
 
@@ -224,4 +239,4 @@ body {
 	.main .comentarios .comentario .botones button {
 		width: 100%;
 	}
-}
+} 
