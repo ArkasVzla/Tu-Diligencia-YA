@@ -13,7 +13,7 @@ $enviado = '';
 if (isset($_POST['submit'])) {
     $servicio = $_POST['servicio'];
     $archivo = $_POST['archivo'];
-    $correo = $_POST['correo'];
+    $email = $_POST['email'];
     $numero_telefono = $_POST['numero_telefono'];
     $mensaje = $_POST['mensaje']; 
 
@@ -32,11 +32,11 @@ if (isset($_POST['submit'])) {
         $errores .= 'Ingrese los datos correctamente';
     }
 
-    if (!empty($correo)) {
-        $correo = filter_var($archivo, FILTER_SANITIZE_STRING);
-        $correo = trim($archivo);
-        $correo = htmlspecialchars($correo);
-        $correo = stripcslashes($correo);
+    if (!empty($email)) {
+        $email = filter_var($email, FILTER_SANITIZE_STRING);
+        $email = trim($email);
+        $email = htmlspecialchars($email);
+        $email = stripcslashes($email);
     } else {
         $errores .= 'Ingrese los datos correctamente';
     }
@@ -85,15 +85,15 @@ if ($_SERVER['REQUEST_METHOD']  == 'POST' && !empty($_FILES)) {
         move_uploaded_file($_FILES['archivo']['tmp_name'], $archivo_subido);
 
         $statement = $conexion->prepare('
-            INSERT INTO servicios (servicio, archivo, correo, numero_telefono, mensaje) 
-            VALUES (:servicio, :archivo, :correo, :numero_telefono, :mensaje)
+            INSERT INTO servicios (servicio, archivo, email, numero_telefono, mensaje) 
+            VALUES (:servicio, :archivo, :email, :numero_telefono, :mensaje)
         ');
         
         $statement->execute(array(
             ':servicio' => $_POST['servicio'],
             ':archivo' => $_FILES['archivo']['name'],
-            ':correo' => $_POST['correo'],
-            ':telefono' => $_POST['numero_telefono'],
+            ':email' => $_POST['email'],
+            ':numero_telefono' => $_POST['numero_telefono'],
             ':mensaje' => $_POST['mensaje']
         ));
 
@@ -108,14 +108,14 @@ $fotos_por_pagina = 8;
 $pagina_actual = (isset($_GET['p']) ? (int)$_GET['p'] : 1 );
 $inicio = ($pagina_actual > 1) ? $pagina_actual * $fotos_por_pagina - $fotos_por_pagina : 0;
 
-// traer documentos de la base de datos
 
+// traer documentos de la base de datos
 $statement = $conexion->prepare("SELECT SQL_CALC_FOUND_ROWS * FROM servicios LIMIT $inicio, $fotos_por_pagina");
 $statement->execute();
 $fotos = $statement->fetchAll();
 
 if (!$fotos) {
-    $errores .= ' no hay ninguna foto';
+    $errores .= 'no hay ninguna foto';
 }
 
 print_r($fotos);

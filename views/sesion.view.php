@@ -137,7 +137,7 @@
                                                                     <div class="input-group-prepend">
                                                                         <div class="input-group-text"><i class="material-icons">email</i></div>
                                                                     </div>
-                                                                    <input type="email" class="form-control form-control-md" name="correo" id="correo" placeholder="Ingresar Correo" required>
+                                                                    <input type="email" class="form-control form-control-md" name="email" id="email" placeholder="Ingresar Correo" required>
                                                                     <div class="invalid-feedback text-left">Ingresa un correo</div>
                                                                 </div>
                                                             </div>
@@ -233,7 +233,7 @@
                                                                     <div class="input-group-prepend">
                                                                         <div class="input-group-text"><i class="material-icons">email</i></div>
                                                                     </div>
-                                                                    <input type="email" class="form-control form-control-md" id="email" placeholder="Ingresar Correo">
+                                                                    <input type="email" class="form-control form-control-md" name="email" id="email" placeholder="Ingresar Correo">
                                                                 </div>
                                                             </div>
                                                             <!-- Pais de residencia -->
