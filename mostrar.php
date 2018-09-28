@@ -1,5 +1,5 @@
-<?php 
-require 'sesion.view.php';
+<?php session_start();
+require 'views/sesion.view.php';
 
 $fotos_por_pagina = 8;
 
