@@ -88,7 +88,8 @@
                                     </div>
                                 </form>
                             </div>
-                            <!-- ///SECCION VISTA DE LOS USUARIOS -->
+
+                            <!-- ///SECCION ADMNISTRADOR VISTA DE LOS SERVICIOS DE LOS USUARIOS -->
                             <div class="tab-pane fade" id="v-pills-usuario" role="tabpanel" aria-labelledby="v-pills-usuario-tab">
                                 <h3 class="titulo mb-3">Usuarios</h3>
 
