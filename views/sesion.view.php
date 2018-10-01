@@ -93,13 +93,13 @@
                             <div class="tab-pane fade" id="v-pills-usuario" role="tabpanel" aria-labelledby="v-pills-usuario-tab">
                                 <h3 class="titulo mb-3">Usuarios</h3>
 
-                                <?php if (is_array($fotos) || is_object($fotos)): ?>
+                                
                                     <?php foreach( $fotos as $foto):  ?>
                                         <a href="views/sesion.view.php?id=<?php echo $fotos['id']; ?>">
                                             <img src="archivos/<?php echo $fotos['archivo']; ?>" alt="">
                                         </a>
                                     <?php endforeach;  ?>
-                                <?php endif; ?>
+                               
                                 
                             </div>
                             <!-- ///SECCION SELECCIONAR SERVICIOS -->

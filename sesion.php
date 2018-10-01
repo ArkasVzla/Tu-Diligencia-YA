@@ -1,11 +1,5 @@
 <?php session_start();
 
-if(isset($_SESSION['usuario'])){
-    require 'views/sesion.view.php';
-}else {
-    header('Location: login.php');
-}
-
 $errores = '';
 $enviado = '';
 
@@ -76,6 +70,7 @@ if (!$conexion) {
     die();
 }
 
+
 // guardar en la base de datos los servicios
 if ($_SERVER['REQUEST_METHOD']  == 'POST' && !empty($_FILES)) {
     $check = @getimagesize($_FILES['archivo']['tmp_name']);
@@ -102,6 +97,7 @@ if ($_SERVER['REQUEST_METHOD']  == 'POST' && !empty($_FILES)) {
     }
 }
 
+
 // Paginacion
 $fotos_por_pagina = 8;
 
@@ -114,10 +110,18 @@ $statement = $conexion->prepare("SELECT SQL_CALC_FOUND_ROWS * FROM servicios LIM
 $statement->execute();
 $fotos = $statement->fetchAll();
 
+print_r($fotos);
 
 $statement = $conexion->prepare("SELECT FOUND_ROWS() as total_filas");
 $statement->execute();
 $total_post = $statement->fetch()['total_filas'];
 
 $total_paginas = ceil($total_post / $fotos_por_pagina);
+
+if(isset($_SESSION['usuario'])){
+    require 'views/sesion.view.php';
+}else {
+    header('Location: login.php');
+}
+
 ?>
