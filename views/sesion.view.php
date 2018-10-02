@@ -30,7 +30,7 @@
             </div>
             <main class="main col">
                 <div class="row">
-                    <div class="columna col-lg-7">
+                    <div class="columna col-lg-9">
                         <!-- SECCION MAIN DE LAS ENTRADAS DEL USUARIO -->
                         <div class="widget nueva-entrada tab-content" id="v-pills-tabContent">
                             <div class="tab-pane fade show active" id="v-pills-inicio" role="tabpanel" aria-labelledby="v-pills-inicio-tab">
@@ -92,10 +92,29 @@
                             <!-- ///SECCION ADMNISTRADOR VISTA DE LOS SERVICIOS DE LOS USUARIOS -->
                             <div class="tab-pane fade" id="v-pills-usuario" role="tabpanel" aria-labelledby="v-pills-usuario-tab">
                                 <h3 class="titulo mb-3">Usuarios</h3>
-                                    <?php foreach( $fotos as $foto):  ?>
-                                        <a href="views/sesion.view.php?id=<?php echo $fotos['id']; ?>">
-                                            <img src="archivos/<?php echo $fotos['archivo']; ?>" alt="">
-                                        </a>
+                                   <?php foreach( $fotos as $foto):  ?>
+                                        <table class="table table-striped mt-3">
+                                            <thead class="table-success">
+                                                <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Servicio</th>
+                                                <th scope="col">Correo</th>
+                                                <th scope="col">Telefono</th>
+                                                <th scope="col">Ver Documento</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                <th scope="row"><?php echo $foto['id']; ?></th>
+                                                <td><?php echo $foto['servicio']; ?></td>
+                                                <td><?php echo $foto['email']; ?></td>
+                                                <td><?php echo $foto['numero_telefono']; ?></td>
+                                                <td><a href="sesion.php">
+                                                    <img src="archivos/<?php echo $foto['archivo']; ?>" alt="" width="50">
+                                                </a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>                                                 
                                     <?php endforeach;  ?>
                             </div>
                             <!-- ///SECCION SELECCIONAR SERVICIOS -->
@@ -128,7 +147,7 @@
                                                         </div>
                                                     </div>
                                                             <!-- ingresar correo electronico -->
-                                                    <div class="row mt-3">
+                                                    <div class="row">
                                                         <div class="col-sm-12 col-md-6 col-lg-6 mt-3">
                                                             <div class="was-validated">
                                                                 <label class="sr-only" for="email">Correo</label>
@@ -159,7 +178,7 @@
                                                     <div class="form-group mt-3">
                                                         <div class="was-validated">
                                                             <label for="mensaje">Mensaje</label>
-                                                            <textarea class="form-control textareaservicios" name="mensaje" id="mensaje" rows="3" placeholder="Escriba una descripcion del servicio que requiere" style="max-height: 300px; min-height: 300px;" required></textarea>
+                                                            <textarea class="form-control textareaservicios" name="mensaje" id="mensaje" rows="3" placeholder="Escriba una descripcion del servicio que requiere" style="max-height: 200px; min-height: 200px;" required></textarea>
                                                             <div class="invalid-feedback text-left">Ingresar mensaje</div>
                                                         </div>
                                                         <input type="submit" name="solicitar" id="solicitar" value="Solicitar" class="btn btn-outline-primary btn-md btn-block text-center mt-2">
@@ -302,7 +321,7 @@
                         </div>
                     </div>
                     <!-- SECCION DEL ASIDE ESTADISTICAS, PUBLICIDAD -->
-                    <div class="columna col-lg-5">
+                    <div class="columna col-lg-3">
                         <div class="widget estadisticas">
                             <h3 class="titulo">Estadisticas</h3>
                             <div class="contenedor d-flex flex-wrap">
@@ -321,7 +340,7 @@
                             </div>
                         </div>
                         
-                        <div class="widget comentarios">
+                        <!-- <div class="widget comentarios">
                             <h3 class="titulo">Comentarios</h3>
                             <div class="contenedor">
                                 <div class="comentario d-flex flex-wrap">
@@ -343,7 +362,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
 

@@ -110,7 +110,6 @@ $statement = $conexion->prepare("SELECT SQL_CALC_FOUND_ROWS * FROM servicios LIM
 $statement->execute();
 $fotos = $statement->fetchAll();
 
-print_r($fotos);
 
 $statement = $conexion->prepare("SELECT FOUND_ROWS() as total_filas");
 $statement->execute();
