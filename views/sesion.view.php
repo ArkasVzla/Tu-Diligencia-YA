@@ -108,7 +108,7 @@
                                 <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                                     <div class="row">   
                                         <div class="col-sm-12 col-md-12 col-lg-12">
-                                            <div class="card text-center mb-2">
+                                            <div class="card text-center mb-3">
                                                 <div class="card-header bg-primary"> 
                                                   <!-- ingresar texto -->
                                                 </div>
@@ -125,14 +125,14 @@
                                                         </select>
                                                         <div class="invalid-feedback text-left">Selecciona un servicio</div>
                                                             <!-- ingresar imagen -->
-                                                        <div class="custom-file mt-2">
+                                                        <div class="custom-file mt-3">
                                                             <input type="file" name="archivo" class="custom-file-input" id="archivo" lang="es" required>
                                                             <label class="custom-file-label" for="customFileLang">Adjuntar Archivo</label>
                                                             <div class="invalid-feedback text-left">Adjunta un archivo</div>
                                                         </div>
                                                     </div>
                                                             <!-- ingresar correo electronico -->
-                                                    <div class="row">
+                                                    <div class="row mt-3">
                                                         <div class="col-sm-12 col-md-6 col-lg-6 mt-3">
                                                             <div class="was-validated">
                                                                 <label class="sr-only" for="email">Correo</label>
