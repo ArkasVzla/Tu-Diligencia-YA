@@ -192,7 +192,7 @@
                                                                     <div class="input-group-prepend">
                                                                         <div class="input-group-text"><i class="material-icons">face</i></div>
                                                                     </div>
-                                                                    <input type="text" class="form-control form-control-md" id="nombre" placeholder="Ingresar Nombre">
+                                                                    <input type="text" class="form-control form-control-md" name="nombre" id="nombre" placeholder="Ingresar Nombre">
                                                                 </div>
                                                             </div>
                                                             <!-- apellido del usuario -->
@@ -202,7 +202,7 @@
                                                                     <div class="input-group-prepend">
                                                                         <div class="input-group-text"><i class="material-icons">face</i></div>
                                                                     </div>
-                                                                    <input type="text" class="form-control form-control-md" id="apellido" placeholder="Ingresar Apellido">
+                                                                    <input type="text" class="form-control form-control-md" name="apellido" id="apellido" placeholder="Ingresar Apellido">
                                                                 </div>
                                                             </div>
                                                             <!-- Cedula del usuario -->
@@ -212,7 +212,7 @@
                                                                     <div class="input-group-prepend">
                                                                         <div class="input-group-text lead">V-</div>
                                                                     </div>
-                                                                    <input type="text" class="form-control form-control-md" id="cedula" placeholder="Cedula">
+                                                                    <input type="text" class="form-control form-control-md" name="cedula" id="cedula" placeholder="Cedula">
                                                                 </div>
                                                             </div>
                                                             <!-- Telefono del usuario -->
@@ -222,7 +222,7 @@
                                                                     <div class="input-group-prepend">
                                                                         <div class="input-group-text"><i class="material-icons">phone</i></div>
                                                                     </div>
-                                                                    <input type="text" class="form-control form-control-ms" id="telefono" placeholder="Telefono">
+                                                                    <input type="text" class="form-control form-control-ms" name="telefono" id="telefono" placeholder="Telefono">
                                                                 </div>
                                                             </div>
                                                             <!-- Correo del usuario -->
@@ -252,7 +252,7 @@
                                                                     <div class="input-group-prepend">
                                                                         <div class="input-group-text"><i class="material-icons">location_on</i></div>
                                                                     </div>
-                                                                    <input type="text" class="form-control form-control-md" id="direccion" placeholder="Direccion">
+                                                                    <input type="text" class="form-control form-control-md" name="direccion" id="direccion" placeholder="Direccion">
                                                                 </div>
                                                             </div>
 
@@ -274,7 +274,7 @@
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text"><i class="material-icons">lock_open</i></div>
                                                                 </div>
-                                                                <input type="password" class="form-control form-control-md" id="contraseña-uno" placeholder="Contraseña">
+                                                                <input type="password" class="form-control form-control-md" name="passuno" id="contraseña-uno" placeholder="Contraseña">
                                                             </div>
                                                         </div>
                 
@@ -284,7 +284,7 @@
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text"><i class="material-icons">lock_open</i></div>
                                                                 </div>
-                                                                <input type="password" class="form-control form-control-md" id="contraseña-dos" placeholder="Repetir Contraseña">
+                                                                <input type="password" class="form-control form-control-md" name="passdos" id="contraseña-dos" placeholder="Repetir Contraseña">
                                                             </div>
                                                         </div>
 
