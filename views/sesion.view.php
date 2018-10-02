@@ -92,15 +92,11 @@
                             <!-- ///SECCION ADMNISTRADOR VISTA DE LOS SERVICIOS DE LOS USUARIOS -->
                             <div class="tab-pane fade" id="v-pills-usuario" role="tabpanel" aria-labelledby="v-pills-usuario-tab">
                                 <h3 class="titulo mb-3">Usuarios</h3>
-
-                                
                                     <?php foreach( $fotos as $foto):  ?>
                                         <a href="views/sesion.view.php?id=<?php echo $fotos['id']; ?>">
                                             <img src="archivos/<?php echo $fotos['archivo']; ?>" alt="">
                                         </a>
                                     <?php endforeach;  ?>
-                               
-                                
                             </div>
                             <!-- ///SECCION SELECCIONAR SERVICIOS -->
                             <div class="tab-pane fade" id="v-pills-servicios" role="tabpanel" aria-labelledby="v-pills-servicios-tab">
