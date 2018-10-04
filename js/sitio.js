@@ -1,3 +1,5 @@
+// Animacion de barra de menu
+
 $(window).scroll(function() {
   if ($(document).scrollTop() >= 100) {
     $('.encabezado').addClass('fondo');
@@ -29,3 +31,7 @@ $(window).scroll(function() {
     $('.encabezado').removeClass('fondo3');
   }
 });
+
+//*-------------- INICIANDO WOW ------------------ * //
+
+new WOW().init();
