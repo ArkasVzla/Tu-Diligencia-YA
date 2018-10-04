@@ -227,7 +227,7 @@
 		<div class="row ">
 			<div class="col-sm-12 col-md-12 col-lg-8">
 				<div class="col-sm-12 col-md-12 col-lg-12">
-				<form action="index.php" method="post" name="" id="">
+				<form action="index.php" method="post" name="" id="" class="wow zoomIn">
 					<div class="form-group">
 						<label class="text-secondary col-form-label-md" for="nombre">Nombre:</label>
 						<input type="text" class="form-control form-control-lg border-secondary" name="nombre" id="nombre" aria-describedby="emailHelp" placeholder="Ingresar Nombre">
@@ -271,14 +271,14 @@
         <div class="container mt-3">
           <div class="row">
                 <div class="col-sm-12 col-md-3 col-lg-3">
-                    <figure class="figure text-center">
+                    <figure class="figure text-center wow zoomIn">
                       <img src="img/logo.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto; mt-5" width="300">
                       <small class="text-muted">@ Copyright Venezuela 2018</small>
                     </figure>
                 </div>
 
               <div class="col-sm-12 col-md-3 col-lg-3">
-                  <h1 class="display-4 text-muted text-center">Inicio</h1>
+                  <h1 class="display-4 text-muted text-center wow zoomIn">Inicio</h1>
                     <ul class="nav flex-column text-center">
                         <li class="nav-item">
                           <a href="#LaEmpresa" class="nav-link">La Empresa</a>
@@ -295,7 +295,7 @@
                     </ul>
               </div>
               <div class="col-sm-12 col-md-3 col-lg-3">
-                  <h1 class="display-4 text-muted text-center">Siguenos</h1>
+                  <h1 class="display-4 text-muted text-center wow zoomIn">Siguenos</h1>
                     <ul class="nav flex-column text-center">
                         <li class="nav-item">
                             <a href="https://www.facebook.com/tudiligenciaya2018/" class="nav-link">Facebook</a>
@@ -310,7 +310,7 @@
                 </div>
 
                 <div class="col-sm-12 col-md-3 col-lg-3">
-                  <h1 class="display-4 text-muted text-center">Contacto</h1>
+                  <h1 class="display-4 text-muted text-center wow zoomIn">Contacto</h1>
                     <ul class="nav flex-column text-center">
                           <li class="nav-item">
                               <p class="text-muted">Tlf.: +58424000000</p>
