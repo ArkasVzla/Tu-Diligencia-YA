@@ -23,13 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $resultado = $statements->fetch();
 
     if ($resultado !== false) {
-        $_SESSION['usuario'] = $usuario;
+        $_SESSION['usuario']['id'] = $resultado['id'];
         header('Location: sesion.php');
     }else {
         $errores .= 'Datos incorrectos';
     }
-   
+    
 }
-
 require 'views/login.view.php';
+
 ?>

@@ -1,5 +1,4 @@
 <?php session_start();
-
 $errores = '';
 $enviado = '';
 
@@ -7,8 +6,6 @@ $enviado = '';
 if (isset($_POST['submit'])) {
     $servicio = $_POST['servicio'];
     $archivo = $_POST['archivo'];
-    $email = $_POST['email'];
-    $numero_telefono = $_POST['numero_telefono'];
     $mensaje = $_POST['mensaje']; 
 
     if(!empty($servicio)){
@@ -22,24 +19,6 @@ if (isset($_POST['submit'])) {
         $archivo = trim($archivo);
         $archivo = htmlspecialchars($archivo);
         $archivo = stripcslashes($archivo);
-    } else {
-        $errores .= 'Ingrese los datos correctamente';
-    }
-
-    if (!empty($email)) {
-        $email = filter_var($email, FILTER_SANITIZE_STRING);
-        $email = trim($email);
-        $email = htmlspecialchars($email);
-        $email = stripcslashes($email);
-    } else {
-        $errores .= 'Ingrese los datos correctamente';
-    }
-
-    if (!empty($numero_telefono)){
-        $numero_telefono = filter_var($numero_telefono, FILTER_SANITIZE_STRING);
-        $numero_telefono = trim($numero_telefono);
-        $numero_telefono = htmlspecialchars($numero_telefono);
-        $numero_telefono = stripcslashes($numero_telefono);
     } else {
         $errores .= 'Ingrese los datos correctamente';
     }
@@ -73,27 +52,30 @@ if (!$conexion) {
 
 // guardar en la base de datos los servicios
 if ($_SERVER['REQUEST_METHOD']  == 'POST' && !empty($_FILES)) {
-    $check = @getimagesize($_FILES['archivo']['tmp_name']);
-    if ($check !== false) {
-        $carpeta_destino = 'archivos/';
-        $archivo_subido = $carpeta_destino . $_FILES['archivo']['name'];
-        move_uploaded_file($_FILES['archivo']['tmp_name'], $archivo_subido);
-
-        $statement = $conexion->prepare('
-            INSERT INTO servicios (servicio, archivo, email, numero_telefono, mensaje) 
-            VALUES (:servicio, :archivo, :email, :numero_telefono, :mensaje)
-        ');
-        
-        $statement->execute(array(
-            ':servicio' => $_POST['servicio'],
-            ':archivo' => $_FILES['archivo']['name'],
-            ':email' => $_POST['email'],
-            ':numero_telefono' => $_POST['numero_telefono'],
-            ':mensaje' => $_POST['mensaje']
-        ));
-
-    } else {
-        $error = "El archivo es muy pesado";
+    if(!empty($errores))
+    {
+        $check = @getimagesize($_FILES['archivo']['tmp_name']);
+        if ($check !== false) {
+            $carpeta_destino = 'archivos/';
+            $archivo_subido = $carpeta_destino . $_FILES['archivo']['name'];
+            move_uploaded_file($_FILES['archivo']['tmp_name'], $archivo_subido);
+    
+            $statement = $conexion->prepare('
+                INSERT INTO servicios (servicio, archivo, email, numero_telefono, mensaje) 
+                VALUES (:servicio, :archivo, :email, :numero_telefono, :mensaje)
+            ');
+            
+            $statement->execute(array(
+                ':servicio' => $_POST['servicio'],
+                ':archivo' => $_FILES['archivo']['name'],
+                ':email' => $_POST['email'],
+                ':numero_telefono' => $_POST['numero_telefono'],
+                ':mensaje' => $_POST['mensaje']
+            ));
+    
+        } else {
+            $error = "El archivo es muy pesado";
+        }
     }
 }
 
@@ -110,6 +92,10 @@ $statement = $conexion->prepare("SELECT SQL_CALC_FOUND_ROWS * FROM servicios LIM
 $statement->execute();
 $fotos = $statement->fetchAll();
 
+//SERVICIOS
+$statement = $conexion->prepare("SELECT * FROM servicios WHERE 1");
+$statement->execute();
+$servicios = $statement->fetchAll();
 
 $statement = $conexion->prepare("SELECT FOUND_ROWS() as total_filas");
 $statement->execute();
