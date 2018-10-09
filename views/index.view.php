@@ -57,11 +57,11 @@
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="img/slider3.jpeg" alt="responsive-image" height="700" style="">
+                <img class="d-block w-100" src="img/slider3.jpg" alt="responsive-image" height="700" style="">
                 <div class="carousel-caption d-none d-md-block">
-                    <h1 class="text-primary wow bounceIn">¿Estas fuerta de venezuela y no puedes como tramitar tus documentos?</h1>
-                    <hr class="border border-warning">
-                    <a href="registrate.php" class="btn btn-lg btn-outline-primary wow bounceIn"> Registrate</a>
+                    <h1 class="text-white wow bounceIn">¿Estas fuera de venezuela y no puedes como tramitar tus documentos?</h1>
+                    <hr class="border border-white">
+                    <a href="registrate.php" class="btn btn-lg btn-outline-light wow bounceIn">Registrate</a>
                 </div>
             </div>
         </div>
