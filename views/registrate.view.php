@@ -7,6 +7,7 @@
     <title>Registrate</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body> 
@@ -57,7 +58,7 @@
         <div class="row">
             <div class="col-12 d-flex justify-content-center mt-3">
                 <figure class="figure">
-                    <img src="img/registrate.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto; mt-5" width="150">
+                    <img src="img/registrate.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto; mt-5 wow flip" width="150">
                 </figure>
             </div>
         </div>
@@ -239,5 +240,7 @@
 	</footer>
       <script src="js/jquery-3.3.1.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="js/wow.min.js"></script>
+      <script type="text/javascript" src="js/sitio.js"></script>
 </body>
 </html>

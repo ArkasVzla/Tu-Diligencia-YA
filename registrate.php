@@ -130,8 +130,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $pais = filter_var(strtolower($_POST['pais']), FILTER_SANITIZE_STRING);
     $direccion = filter_var(strtolower($_POST['direccion']), FILTER_SANITIZE_STRING);
     $telefono = filter_var(strtolower($_POST['telefono']), FILTER_SANITIZE_STRING);
-    $passuno = $_POST['passuno'];
-    $passdos = $_POST['passdos'];
+    $passuno = filter_var(strtolower($_POST['passuno']));
+    $passdos = filter_var(strtolower($_POST['passdos']));
     
     // conexion a la base de datos
     try{

@@ -8,7 +8,7 @@ $errores = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $usuario = filter_var(strtolower($_POST['usuario']), FILTER_SANITIZE_STRING);
-    $passuno = $_POST['passuno'];
+    $passuno = filter_var(strtolower($_POST['passuno']));
 
     try{
         $conexion = new PDO('mysql:host=localhost;dbname=tudiligenciaya', 'root', '');
