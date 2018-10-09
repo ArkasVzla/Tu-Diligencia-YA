@@ -97,6 +97,7 @@
                                             <thead class="table-success">
                                                 <tr>
                                                 <th scope="col">ID</th>
+                                                <th scope="col">usuario</th>
                                                 <th scope="col">Servicio</th>
                                                 <th scope="col">Correo</th>
                                                 <th scope="col">Telefono</th>
