@@ -8,8 +8,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/modulo.js"></script>
 </head>
 <body> 
+    <?php var_dump($_SESSION); ?>
+    <input type="hidden" id="id_usuario" value="<?php echo $_SESSION['usuario']['id']; ?>"
     <div class="container-fluid">
         <div class="row">
                        <!-- BARRA DE MENU  -->
@@ -22,7 +27,7 @@
                 <nav class="nav nav-pills menu d-flex d-sm-block justify-content-center flex-wrap" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <a class="nav-link" id="v-pills-inicio-tab" data-toggle="pill" href="#v-pills-inicio" role="tab" aria-controls="v-pills-inicio" aria-selected="true" href="#"><i class="material-icons">home</i><span>Inicio</span></a>
                     <a class="nav-link" id="v-pills-entrada-tab" data-toggle="pill" href="#v-pills-entrada" role="tab" aria-controls="v-pills-entrada" aria-selected="true" href="#"><i class="material-icons">open_in_new</i><span>Entrada</span></a>
-                    <a class="nav-link" id="v-pills-usuario-tab" data-toggle="pill" href="#v-pills-usuario" role="tab" aria-controls="v-pills-usuario" aria-selected="true" href="#"><i class="material-icons">supervisor_account</i><span>Usuarios</span></a>
+                    <a class="nav-link" id="v-pills-usuario-tab" data-toggle="pill" href="#v-pills-usuario" role="tab" aria-controls="v-pills-usuario" aria-selected="true" href="#" onclick="traer_solicitudes();"><i class="material-icons">supervisor_account</i><span>Usuarios</span></a>
                     <a class="nav-link" id="v-pills-usuario-tab" data-toggle="pill" href="#v-pills-servicios" role="tab" aria-controls="v-pills-servicios" aria-selected="true" href="#"><i class="material-icons">room_service</i><span>Servicios</span></a>
                     <a class="nav-link" id="v-pills-configuraciones-tab" data-toggle="pill" href="#v-pills-configuraciones" role="tab" aria-controls="v-pills-configuraciones" aria-selected="true" href="#"><i class="material-icons">settings</i><span>Configuraciones</span></a>
                     <a href="cerrar.php"><i class="material-icons">exit_to_app</i><span>Salir</span></a>
@@ -132,12 +137,9 @@
                                                     <div class="was-validated">
                                                         <select name="servicio" id="servicios" class="custom-select" required>
                                                             <option value="">Seleccionar Servicios</option>
-                                                            <option value="Apostilla de Documentos">Apostilla de Documentos</option>
-                                                            <option value="Antecedentes penales">Antecedentes penales</option>
-                                                            <option value="Tramites Civiles">Tramites Civiles</option>
-                                                            <option value="Tramites Bancarios">Tramites Bancarios</option>
-                                                            <option value="Gestiones Gubernamentales">Gestiones Gubernamentales</option>
-                                                            <option value="Pago de deudas de servicios publicos">Pago de deudas de servicios publicos</option>
+                                                            <?php foreach( $servicios as $servicio):  ?>
+                                                            <?php echo '<option value="'.$servicio['id'].'">'.$servicio['nombre'].'</option>'; ?>
+                                                            <?php endforeach;  ?>
                                                         </select>
                                                         <div class="invalid-feedback text-left">Selecciona un servicio</div>
                                                             <!-- ingresar imagen -->
@@ -148,32 +150,7 @@
                                                         </div>
                                                     </div>
                                                             <!-- ingresar correo electronico -->
-                                                    <div class="row">
-                                                        <div class="col-sm-12 col-md-6 col-lg-6 mt-3">
-                                                            <div class="was-validated">
-                                                                <label class="sr-only" for="email">Correo</label>
-                                                                <div class="input-group">
-                                                                    <div class="input-group-prepend">
-                                                                        <div class="input-group-text"><i class="material-icons">email</i></div>
-                                                                    </div>
-                                                                    <input type="email" class="form-control form-control-md" name="email" id="email" placeholder="Ingresar Correo" required>
-                                                                    <div class="invalid-feedback text-left">Ingresa un correo</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                                <!-- ingresar telefono -->
-                                                        <div class="col-sm-12 col-md-6 col-lg-6 mt-3">
-                                                            <div class="was-validated">
-                                                                <label class="sr-only" for="numero_telefono">Telefono</label>
-                                                                <div class="input-group">
-                                                                    <div class="input-group-prepend">
-                                                                        <div class="input-group-text"><i class="material-icons">face</i></div>
-                                                                    </div>
-                                                                    <input type="text" class="form-control form-control-md" name="numero_telefono" id="numero_telefono" placeholder="Ingresar Telefono" required>
-                                                                    <div class="invalid-feedback text-left">Ingresar Telefono</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>  
+
                                                     </div>
                                                                     <!-- ingresar mensaje -->
                                                     <div class="form-group mt-3">
@@ -372,7 +349,5 @@
         </div>
     </div>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
