@@ -8,12 +8,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="js/alertify/css/alertify.css">
+    <link rel="stylesheet" href="js/alertify/css/alertify.rtl.css">
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/alertify/alertify.js"></script>
     <script type="text/javascript" src="js/modulo.js"></script>
 </head>
 <body> 
-    <?php var_dump($_SESSION); ?>
     <input type="hidden" id="id_usuario" value="<?php echo $_SESSION['usuario']['id']; ?>"
     <div class="container-fluid">
         <div class="row">
@@ -26,7 +28,7 @@
                 </div>
                 <nav class="nav nav-pills menu d-flex d-sm-block justify-content-center flex-wrap" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <a class="nav-link" id="v-pills-inicio-tab" data-toggle="pill" href="#v-pills-inicio" role="tab" aria-controls="v-pills-inicio" aria-selected="true" href="#"><i class="material-icons">home</i><span>Inicio</span></a>
-                    <a class="nav-link" id="v-pills-entrada-tab" data-toggle="pill" href="#v-pills-entrada" role="tab" aria-controls="v-pills-entrada" aria-selected="true" href="#"><i class="material-icons">open_in_new</i><span>Entrada</span></a>
+                    <a class="nav-link" id="v-pills-entrada-tab" data-toggle="pill" href="#v-pills-entrada" role="tab" aria-controls="v-pills-entrada" aria-selected="true" href="#" onclick="traer_mis_solicitudes();"><i class="material-icons">open_in_new</i><span>Entrada</span></a>
                     <a class="nav-link" id="v-pills-usuario-tab" data-toggle="pill" href="#v-pills-usuario" role="tab" aria-controls="v-pills-usuario" aria-selected="true" href="#" onclick="traer_solicitudes();"><i class="material-icons">supervisor_account</i><span>Usuarios</span></a>
                     <a class="nav-link" id="v-pills-usuario-tab" data-toggle="pill" href="#v-pills-servicios" role="tab" aria-controls="v-pills-servicios" aria-selected="true" href="#"><i class="material-icons">room_service</i><span>Servicios</span></a>
                     <a class="nav-link" id="v-pills-configuraciones-tab" data-toggle="pill" href="#v-pills-configuraciones" role="tab" aria-controls="v-pills-configuraciones" aria-selected="true" href="#"><i class="material-icons">settings</i><span>Configuraciones</span></a>
@@ -52,8 +54,8 @@
                             <div class="tab-pane fade" id="v-pills-entrada" role="tabpanel" aria-labelledby="v-pills-entrada-tab">
                                 <h3 class="titulo">Mis Servicios</h3>
                                 <form action="#">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="row" id="tabla_mis_solicitudes">
+                                        <!--<div class="col-sm-12 col-md-6 col-lg-6">
                                             <div class="card border-dark mb-2">
                                                 <div class="card-header">
                                                     Mi Servicio #1
@@ -89,7 +91,7 @@
                                                     <button class="btn btn-outline-danger btn-sm" type="submit" value="Eliminar">Eliminar</button>
                                                 </div>  
                                             </div>
-                                        </div>
+                                        </div>-->
                                     </div>
                                 </form>
                             </div>
@@ -97,31 +99,23 @@
                             <!-- ///SECCION ADMNISTRADOR VISTA DE LOS SERVICIOS DE LOS USUARIOS -->
                             <div class="tab-pane fade" id="v-pills-usuario" role="tabpanel" aria-labelledby="v-pills-usuario-tab">
                                 <h3 class="titulo mb-3">Usuarios</h3>
-                                   <?php foreach( $fotos as $foto):  ?>
-                                        <table class="table table-striped mt-3">
-                                            <thead class="table-success">
-                                                <tr>
-                                                <th scope="col">ID</th>
-                                                <th scope="col">usuario</th>
-                                                <th scope="col">Servicio</th>
-                                                <th scope="col">Correo</th>
-                                                <th scope="col">Telefono</th>
-                                                <th scope="col">Ver Documento</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                <th scope="row"><?php echo $foto['id']; ?></th>
-                                                <td><?php echo $foto['servicio']; ?></td>
-                                                <td><?php echo $foto['email']; ?></td>
-                                                <td><?php echo $foto['numero_telefono']; ?></td>
-                                                <td><a href="sesion.php">
-                                                    <img src="archivos/<?php echo $foto['archivo']; ?>" alt="" width="50">
-                                                </a></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>                                                 
-                                    <?php endforeach;  ?>
+                                    <table class="table table-striped mt-3">
+                                        <thead class="table-success">
+                                            <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Usuario</th>
+                                            <th scope="col">Servicio</th>
+                                            <th scope="col">Correo</th>
+                                            <th scope="col">Telefono</th>
+                                            <th scope="col">Ver Documento</th>
+                                            <th scope="col">Estado</th>
+                                            <th scope="col">Cambiar Estado</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tabla_solicitudes">
+                                            <!-- DATOS DE SOLICITUDES -->
+                                        </tbody>
+                                    </table>                                                 
                             </div>
                             <!-- ///SECCION SELECCIONAR SERVICIOS -->
                             <div class="tab-pane fade" id="v-pills-servicios" role="tabpanel" aria-labelledby="v-pills-servicios-tab">
@@ -136,7 +130,7 @@
                                                 <div class="card-body">
                                                     <div class="was-validated">
                                                         <select name="servicio" id="servicios" class="custom-select" required>
-                                                            <option value="">Seleccionar Servicios</option>
+                                                            <option value="0">Seleccionar Servicios</option>
                                                             <?php foreach( $servicios as $servicio):  ?>
                                                             <?php echo '<option value="'.$servicio['id'].'">'.$servicio['nombre'].'</option>'; ?>
                                                             <?php endforeach;  ?>
@@ -144,7 +138,7 @@
                                                         <div class="invalid-feedback text-left">Selecciona un servicio</div>
                                                             <!-- ingresar imagen -->
                                                         <div class="custom-file mt-3">
-                                                            <input type="file" name="archivo" class="custom-file-input" id="archivo" lang="es" required>
+                                                            <input type="file" name="archivo" class="custom-file-input" id="archivo" lang="es" onchange="subir_archivo(this.files)" required>
                                                             <label class="custom-file-label" for="customFileLang">Adjuntar Archivo</label>
                                                             <div class="invalid-feedback text-left">Adjunta un archivo</div>
                                                         </div>
@@ -159,10 +153,7 @@
                                                             <textarea class="form-control textareaservicios" name="mensaje" id="mensaje" rows="3" placeholder="Escriba una descripcion del servicio que requiere" style="max-height: 200px; min-height: 200px;" required></textarea>
                                                             <div class="invalid-feedback text-left">Ingresar mensaje</div>
                                                         </div>
-                                                        <input type="submit" name="solicitar" id="solicitar" value="Solicitar" class="btn btn-outline-primary btn-md btn-block text-center mt-2">
-                                                        <?php if (isset($error)): ?>
-                                                            <p class="error"> <?php echo $error; ?></p>
-                                                        <?php endif ?>
+                                                        <button type="button" name="solicitar" id="solicitar" value="Solicitar" class="btn btn-outline-primary btn-md btn-block text-center mt-2" onclick="ingresar_solicitud()">Solicitar</button>
                                                     </div>
                                                 </div>  
                                             </div>
@@ -298,25 +289,6 @@
                             
                         </div>
                     </div>
-                    <!-- SECCION DEL ASIDE ESTADISTICAS, PUBLICIDAD -->
-                    <div class="columna col-lg-3">
-                        <div class="widget estadisticas">
-                            <h3 class="titulo">Estadisticas</h3>
-                            <div class="contenedor d-flex flex-wrap">
-                                <div class="caja">
-                                    <h3>15.154</h3>
-                                    <p>Visitas</p>
-                                </div>
-                                <div class="caja">
-                                    <h3>1.854</h3>
-                                    <p>Registros</p>
-                                </div>
-                                <div class="caja">
-                                    <h3>15.154</h3>
-                                    <p>Ingresos</p>
-                                </div>
-                            </div>
-                        </div>
                         
                         <!-- <div class="widget comentarios">
                             <h3 class="titulo">Comentarios</h3>
@@ -348,6 +320,35 @@
             </main>
         </div>
     </div>
+
+<div class="modal" id="cambiar_estado">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h4 class="modal-title">Cambiar Estado</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-12" id="botones">
+                    <button type="button" class="btn btn-primary text-center">Primary</button>
+                    <button type="button" class="btn btn-primary text-center">Primary</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        </div>
+        
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
