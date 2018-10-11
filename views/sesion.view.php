@@ -10,13 +10,17 @@
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="js/alertify/css/alertify.css">
     <link rel="stylesheet" href="js/alertify/css/alertify.rtl.css">
+    <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css">
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="js/dropzone/dropzone.js"></script>
+    <script type="text/javascript" src="js/dropzone/upload.js"></script>
     <script type="text/javascript" src="js/alertify/alertify.js"></script>
     <script type="text/javascript" src="js/modulo.js"></script>
 </head>
 <body> 
-    <input type="hidden" id="id_usuario" value="<?php echo $_SESSION['usuario']['id']; ?>"
+    <input type="hidden" id="id_usuario" value="<?php echo $_SESSION['usuario']['id']; ?>">
     <div class="container-fluid">
         <div class="row">
                        <!-- BARRA DE MENU  -->
@@ -30,24 +34,28 @@
                     <a class="nav-link" id="v-pills-inicio-tab" data-toggle="pill" href="#v-pills-inicio" role="tab" aria-controls="v-pills-inicio" aria-selected="true" href="#"><i class="material-icons">home</i><span>Inicio</span></a>
                     <a class="nav-link" id="v-pills-entrada-tab" data-toggle="pill" href="#v-pills-entrada" role="tab" aria-controls="v-pills-entrada" aria-selected="true" href="#" onclick="traer_mis_solicitudes();"><i class="material-icons">open_in_new</i><span>Entrada</span></a>
                     <a class="nav-link" id="v-pills-usuario-tab" data-toggle="pill" href="#v-pills-usuario" role="tab" aria-controls="v-pills-usuario" aria-selected="true" href="#" onclick="traer_solicitudes();"><i class="material-icons">supervisor_account</i><span>Usuarios</span></a>
+                    <!-- <a class="nav-link" id="v-pills-publicar-tab" data-toggle="pill" href="#v-pills-publicar" role="tab" aria-controls="v-pills-publicar" href="#"><i class="material-icons">supervisor_account</i><span>Publicar</span></a> -->
                     <a class="nav-link" id="v-pills-usuario-tab" data-toggle="pill" href="#v-pills-servicios" role="tab" aria-controls="v-pills-servicios" aria-selected="true" href="#"><i class="material-icons">room_service</i><span>Servicios</span></a>
-                    <a class="nav-link" id="v-pills-configuraciones-tab" data-toggle="pill" href="#v-pills-configuraciones" role="tab" aria-controls="v-pills-configuraciones" aria-selected="true" href="#"><i class="material-icons">settings</i><span>Configuraciones</span></a>
+                    <!-- <a class="nav-link" id="v-pills-configuraciones-tab" data-toggle="pill" href="#v-pills-configuraciones" role="tab" aria-controls="v-pills-configuraciones" aria-selected="true" href="#"><i class="material-icons">settings</i><span>Configuraciones</span></a> -->
                     <a href="cerrar.php"><i class="material-icons">exit_to_app</i><span>Salir</span></a>
                 </nav>
             </div>
             <main class="main col">
                 <div class="row">
                     <div class="columna col-lg-9">
-                        <!-- SECCION MAIN DE LAS ENTRADAS DEL USUARIO -->
+                                    <!-- SECCION MAIN DE LAS NOTICIAS -->
                         <div class="widget nueva-entrada tab-content" id="v-pills-tabContent">
                             <div class="tab-pane fade show active" id="v-pills-inicio" role="tabpanel" aria-labelledby="v-pills-inicio-tab">
-                                <h3 class="titulo">Nuevo Entrada de Inicio</h3>
+                                <h3 class="titulo">Noticias</h3>
                                 <form action="#">
-                                    <input type="text" placeholder="Titulo de la entrada">
-                                    <textarea name="" id="" cols="30" rows="10" placeholder="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, odio, excepturi repellendus alias architecto tenetur saepe nihil officiis voluptas, corporis suscipit fugiat voluptate sequi reiciendis nisi qui nulla nesciunt quia!"></textarea>
-                                    <div class="d-flex justify-content-center">
-                                        <button><i class="material-icons">exit_to_app</i>Enviar</button>
-                                    </div>  
+                                <div class="card mb-3">
+                                    <img class="card-img-top" src="img/noticia1.jpg" alt="Card image cap" height="400">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Titulo de la noticia</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                            <p class="card-text"><small class="text-muted">Fecha de lo publicado</small></p>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         <!-- ///SECCION DE LAS ENTRADAS -->
@@ -99,7 +107,7 @@
                             <!-- ///SECCION ADMNISTRADOR VISTA DE LOS SERVICIOS DE LOS USUARIOS -->
                             <div class="tab-pane fade" id="v-pills-usuario" role="tabpanel" aria-labelledby="v-pills-usuario-tab">
                                 <h3 class="titulo mb-3">Usuarios</h3>
-                                    <table class="table table-striped mt-3">
+                                    <table class="table table-responsive table-striped mt-3">
                                         <thead class="table-success">
                                             <tr>
                                             <th scope="col">ID</th>
@@ -116,6 +124,47 @@
                                             <!-- DATOS DE SOLICITUDES -->
                                         </tbody>
                                     </table>                                                 
+                            </div>
+                             <!-- ///PUBLICAR NOTICIAS -->
+                            <div class="tab-pane fade" id="v-pills-publicar" role="tabpanel" aria-labelledby="v-pills-publicar-tab">
+                                <h3 class="titulo">Publicar noticia</h3>
+                                <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+                                    <div class="row">   
+                                        <div class="col-sm-12 col-md-12 col-lg-12">
+                                            <div class="card text-center mb-3">
+                                                <div class="card-header bg-primary"> 
+                                                  <!-- ingresar texto -->
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="was-validated">
+                                                        <!-- ingresar imagen -->
+                                                        <div class="custom-file mt-3">
+                                                            <input type="file" name="imagen_noticia" class="custom-file-input" id="imagen_noticia" lang="es" required>
+                                                            <label class="custom-file-label" for="customFileLang">Adjuntar Archivo</label>
+                                                            <div class="invalid-feedback text-left">Adjunta un archivo</div>
+                                                        </div>
+                                                        <!-- ingresar titilo de la noticia -->
+                                                        <div class="form-group">
+                                                            <label for="formGroupExampleInput">Titulo de la noticia</label>
+                                                            <input type="text" class="form-control" name="titulo_noticia" id="tiutlo_noticia" placeholder="Example input" required>
+                                                            <div class="invalid-feedback text-left">Publicar una noticia</div>
+                                                        </div>    
+                                                    </div>
+                                                                                                               
+                                                                    <!-- ingresar mensaje -->
+                                                    <div class="form-group">
+                                                        <div class="was-validated">
+                                                            <label for="mensaje">Mensaje</label>
+                                                            <textarea class="form-control textareaservicios" name="mensaje_noticia" id="mensaje_noticia" rows="3" placeholder="Escriba una descripcion de la noticia" style="max-height: 200px; min-height: 200px;" required></textarea>
+                                                            <div class="invalid-feedback text-left">Ingresar mensaje</div>
+                                                        </div>
+                                                        <input type="publicar" name="publicar_noticia" id="publicar_noticia" value="Publicar" class="btn btn-outline-primary btn-md btn-block text-center mt-2" onclick="ingresar_solicitud()">
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                             <!-- ///SECCION SELECCIONAR SERVICIOS -->
                             <div class="tab-pane fade" id="v-pills-servicios" role="tabpanel" aria-labelledby="v-pills-servicios-tab">
@@ -138,16 +187,16 @@
                                                         <div class="invalid-feedback text-left">Selecciona un servicio</div>
                                                             <!-- ingresar imagen -->
                                                         <div class="custom-file mt-3">
-                                                            <input type="file" name="archivo" class="custom-file-input" id="archivo" lang="es" onchange="subir_archivo(this.files)" required>
+                                                            <!--<input type="file" name="archivo" class="custom-file-input" id="archivo" lang="es" required>-->
+                                                            <input type="hidden" name="url_archivo" id="url_archivo">
+                                                            <button id="archivo" class="btn btn-primary custom-file-input">Examinar</button>
                                                             <label class="custom-file-label" for="customFileLang">Adjuntar Archivo</label>
                                                             <div class="invalid-feedback text-left">Adjunta un archivo</div>
                                                         </div>
                                                     </div>
-                                                            <!-- ingresar correo electronico -->
-
-                                                    </div>
+                                                                                                               
                                                                     <!-- ingresar mensaje -->
-                                                    <div class="form-group mt-3">
+                                                    <div class="form-group">
                                                         <div class="was-validated">
                                                             <label for="mensaje">Mensaje</label>
                                                             <textarea class="form-control textareaservicios" name="mensaje" id="mensaje" rows="3" placeholder="Escriba una descripcion del servicio que requiere" style="max-height: 200px; min-height: 200px;" required></textarea>
@@ -289,33 +338,23 @@
                             
                         </div>
                     </div>
-                        
-                        <!-- <div class="widget comentarios">
-                            <h3 class="titulo">Comentarios</h3>
-                            <div class="contenedor">
-                                <div class="comentario d-flex flex-wrap">
-                                    <div class="foto">
-                                        <a href="#">
-                                            <img src="img/logo.png" width="100" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="texto">
-                                        <a href="#"> David</a>
-                                        <p>en <a href="#">Mi Primer entrada</a></p>
-                                        <p class="texto-comentario">
-                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae labore architecto eaque, totam asperiores</p>
-                                    </div>
-                                    <div class="botones d-flex justify-content-start flex-wrap w-100">
-                                        <button class="btn btn-primary ">Aprobar</button>
-                                        <button class="btn btn-danger ">Eliminar</button>
-                                        <button class=" btn btn-dark text-light ">Bloquear usuario</button>
-                                    </div>
-                                </div>
+
+                    <div class="col-sm-12 col-md-3 col-lg-3">
+                        <div class="card border-success mb-3" style="max-width: 18rem;">
+                            <div class="card-header">Visitas</div>
+                            <div class="card-body text-success">
+                                <h5 class="card-title">321</h5>                                
                             </div>
-                        </div> -->
+                        </div>
+
+                        <div class="card border-success mb-3" style="max-width: 18rem;">
+                            <div class="card-header">Registro</div>
+                            <div class="card-body text-success">
+                                <h5 class="card-title">487</h5>                                
+                            </div>
+                        </div>
                     </div>
-
-
+                            
                 </div>
             </main>
         </div>
