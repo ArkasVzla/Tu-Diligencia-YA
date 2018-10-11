@@ -5,12 +5,27 @@ $(document).ready(function () {
 function ingresar_solicitud(){
     var id_usuario = $('#id_usuario').val();
     var id_servicio = $('#servicios').val();
+    var archivo = $('#url_archivo').val();
     var mensaje = $('#mensaje').val();
+
+    if(id_usuario=='')
+    {
+        alertify.error('Usuario inválido para ingresar solicitud, inicie sesión nuevamente.');
+    }
+    if(id_servicio=='0')
+    {
+        alertify.error('Debe seleccionar un servicio.');
+    }
+    if(archivo=='')
+    {
+        alertify.error('Por favor ingrese el documento.');
+    }
 
     var datos = {};
 
     datos.id_usuario = id_usuario;
     datos.id_servicio = id_servicio;
+    datos.archivo = archivo;
     datos.mensaje = mensaje;
     datos.funcion = 'guardar_solicitud';
 
@@ -25,6 +40,7 @@ function ingresar_solicitud(){
             if(response==1){
                 alertify.success('Su solicitud ha sido ingresada.');
                 $('#id_servicio').val(0);
+                $('#url_archivo').val('');
                 $('#mensaje').val('');
             } else{ 
                 alertify.error('Ocurrió un error al ingresar la solicitud.');
@@ -47,6 +63,7 @@ function traer_solicitudes(){
             var html = '';
             for(var key in resp)
             {
+                var documento = '';
                 var estados = ['<span class="badge badge-warning">En espera</span>', '<span class="badge badge-primary">En Proceso</span>', '<span class="badge badge-success">Aprobado</span>', '<span class="badge badge-danger">Negada</span>'];
 
                 html+='<tr>';
@@ -55,7 +72,17 @@ function traer_solicitudes(){
                 html+='<td>'+resp[key].nombre+'</td>';
                 html+='<td>'+resp[key].correo+'</td>';
                 html+='<td>'+resp[key].telefono+'</td>';
-                html+='<td>asd</td>';
+                var extensiones = resp[key].archivo.split('.');
+                if(extensiones[1]=='pdf')
+                {
+                    documento+='<a href="http://localhost/Tu-Diligencia-Ya/archivos/'+resp[key].archivo+'" class="btn btn-light" target="_blank" download><i class="material-icons">file_copy</i></a>';
+                } else {
+                    documento+='<a href="http://localhost/Tu-Diligencia-Ya/archivos/'+resp[key].archivo+'" data-fancybox>';
+                    documento+='<img class="img-responsive" style="width: 50%;" src="archivos/'+resp[key].archivo+'" />';
+                    documento+='</a>';
+                }
+
+                html+='<td>'+documento+'</td>';
                 html+='<td>'+estados[resp[key].estado]+'</td>';
                 if(resp[key].estado<=1)
                 {

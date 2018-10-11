@@ -76,7 +76,6 @@
                     <img src="img/nosotros.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto; mt-5 wow zoomIn" width="200">
                 </figure>
                 <p class="text-justify wow fadeInLeft" >Un equipo de confianza que brindamos el mejor apoyo de servicio de asistencias y asesorías para gestiones diversas, tales como revisión, traducción, apostillado de todo tipo de documentos, gestiones gubernamentales, tramites civiles, trámites bancarios y pago de deudas de servicios públicos y entre otros.</p>
-                <p class="text-justify wow fadeInLeft">Un equipo de confianza que brindamos el mejor apoyo de servicio de asistencias y asesorías para gestiones diversas, tales como revisión, traducción, apostillado de todo tipo de documentos, gestiones gubernamentales, tramites civiles, trámites bancarios y pago de deudas de servicios públicos y entre otros.</p>
                 <figure class="figure">
                     <img src="img/conoce-servicios.png" alt="responsive image" class="img-fluid max-width: 100%; height: auto; mt-5 wow zoomIn">
                 </figure>
@@ -164,21 +163,21 @@
                 <div class="card-deck mb-4">
                     <div class="card wow fadeInRight">  
                         <div class="card-body">
-                            <h5 class="card-title text-primary">Card title</h5>
+                            <h5 class="card-title text-primary">Apostilla de Documentos</h5>
                             <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
                     <div class="card wow fadeInRight">  
                         <div class="card-body">
-                            <h5 class="card-title text-primary">Card title</h5>
+                            <h5 class="card-title text-primary">Antecedentes penales</h5>
                             <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
                     <div class="card wow fadeInRight">  
                         <div class="card-body">
-                            <h5 class="card-title text-primary">Card title</h5>
+                            <h5 class="card-title text-primary">Tramites Civiles</h5>
                             <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
@@ -187,21 +186,21 @@
                 <div class="card-deck wow fadeInRight">
                     <div class="card">  
                         <div class="card-body">
-                            <h5 class="card-title text-primary">Card title</h5>
+                            <h5 class="card-title text-primary">Tramites Bancarios</h5>
                             <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
                     <div class="card wow fadeInRight">  
                         <div class="card-body">
-                            <h5 class="card-title text-primary">Card title</h5>
+                            <h5 class="card-title text-primary">Gestiones Gubernamentales</h5>
                             <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
                     <div class="card wow fadeInRight">  
                         <div class="card-body">
-                            <h5 class="card-title text-primary">Card title</h5>
+                            <h5 class="card-title text-primary">Pago de deudas de servicios Publicos</h5>
                             <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
